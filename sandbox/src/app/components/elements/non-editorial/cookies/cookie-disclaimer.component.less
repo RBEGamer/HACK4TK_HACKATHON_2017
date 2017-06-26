@@ -1,0 +1,74 @@
+@import (reference) "../../../_includes";
+
+/* Cookie Layer 2016
+
+*/
+
+#cookie-layer {
+  background-color: rgba(0,0,0, 0.69);
+
+
+  color: @white;
+  position: fixed;
+  table-layout: fixed;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  @media @toMobile {
+    // TODO: replace table layout with flexbox
+    table-layout: auto;
+  }
+
+
+  &.initialized {
+    display: table;
+  }
+
+  .cookie-text {
+    display: table-cell;
+    line-height: 21px;
+    overflow: hidden;
+    padding: @s6 0 @s6 @s5;
+    position: relative;
+    vertical-align: middle;
+    width: 60%;
+    z-index: 1;
+
+    @media @toMobile {
+      .t6;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .button-wrapper {
+    display: table-cell;
+    text-align: right;
+    vertical-align: top;
+    width: 40%;
+
+    @media @toMobile {
+      width: auto;
+    }
+
+    .cb-enable {
+      color: @white;
+      display: inline-block;
+      margin: @s6 @s6 @s6 @s4;
+      padding: @s7 + 1px @s4 + 3px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}

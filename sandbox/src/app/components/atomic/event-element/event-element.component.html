@@ -1,0 +1,19 @@
+<!-- 01.07 Event element -->
+<div class="eventelement">
+  <div *ngIf="!element.link.element.text">
+    <ng-container *wrapInComponentIfExists="element.link">
+      <p class="info" *ngIf="element.dateFrom && element.dateTo">{{element.dateFrom}} - {{element.dateTo}} |
+        {{element.place}}</p>
+      <p *ngIf="element.text">{{element.text}}</p>
+    </ng-container>
+  </div>
+  <div *ngIf="element.link.element.text">
+    <p *ngIf="element.headline">{{element.headline}}</p>
+    <p class="info" *ngIf="element.dateFrom && element.dateTo">{{element.dateFrom}} - {{element.dateTo}} |
+      {{element.place}}</p>
+    <p *ngIf="element.text">{{element.text}}</p>
+    <p *ngIf="element.bodyHtml" [innerHtml]="element.domHtml"></p>
+    <p *ngIf="element.addressHtml" [innerHtml]="element.addressHtml"></p>
+    <include-components *ucpIsset="element.link" [elements]="element.link"></include-components>
+  </div>
+</div>

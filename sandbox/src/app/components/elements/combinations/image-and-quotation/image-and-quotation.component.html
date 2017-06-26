@@ -1,0 +1,17 @@
+<div class="quotation">
+  <div class="quotationteaser" [ngClass]="{'withImage': element.image}">
+    <figure *ngIf="element.image">
+      <img *ngIf="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+           title="{{element.image.title}}"/>
+    </figure>
+    <blockquote *ngIf="element.quoteHtml">
+      <div [innerHTML]="element.quoteHtml"></div>
+      <cite *ngIf="element.author">{{element.author}}</cite>
+    </blockquote>
+    <include-components *ucpIsset="element.link" [elements]="element.link" class="more"></include-components>
+  </div>
+  <blockquote *ngIf="element.quoteBigHtml">
+    <span [innerHTML]="element.quoteBigHtml" class="quote-big"></span>
+    <cite>{{element.authorBig}}</cite>
+  </blockquote>
+</div>

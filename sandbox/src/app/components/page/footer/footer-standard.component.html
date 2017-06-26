@@ -1,0 +1,79 @@
+<!--footer-->
+<div id="footer">
+  <div *ngIf="configCollection">
+    <div>
+      <p class="headline">
+        <span class="roof-line" *ngIf="configCollection.roofLine">{{configCollection.roofLine}}</span>
+        <span class="brand-name" *ngIf="configCollection.brand">{{configCollection.brand}}</span>
+      </p>
+
+      <div *ngIf="configCollectionFooter">
+        <div class="block">
+          <ul *ngIf="configCollectionFooter.element.linkListLeftBlock">
+            <li *ngFor="let linkLeft of configCollectionFooter.element.linkListLeftBlock">
+              <include-components [elements]="linkLeft"></include-components>
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+          <ul *ngIf="configCollectionFooter.element.linkListCenterBlock">
+            <li *ngFor="let linkCenter of configCollectionFooter.element.linkListCenterBlock">
+              <include-components [elements]="linkCenter"></include-components>
+            </li>
+          </ul>
+        </div>
+        <div class="block">
+          <ul *ngIf="configCollectionFooter.element.linkListRightBlock">
+            <li *ngFor="let linkRight of configCollectionFooter.element.linkListRightBlock">
+              <include-components [elements]="linkRight"></include-components>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="social">
+      <div class="block" *ngIf="configCollectionFooter">
+        <p class="headline" ngif="configCollection.element.headlineCorporate">
+          {{configCollectionFooter.element.headlineCorporate}}</p>
+
+        <p class="infolabel" *ngIf="configCollection.informationAccessibility">
+          {{configCollection.informationAccessibility}}</p>
+
+        <div>
+          <ul *ngIf="configCollectionFooter.element.corporate">
+            <li *ngFor="let linkCorporate of configCollectionFooter.element.corporate">
+              <include-components [elements]="linkCorporate"></include-components>
+            </li>
+          </ul>
+          <div class="icons">
+            <!-- Only the first four icons are used. But maybe in other countries icons can be changed (not more than four possible) -->
+            <a class="engineered" *ngIf="configCollectionFooter.element.engineered">
+              <include-components [elements]="configCollectionFooter.element.engineered"></include-components>
+            </a>
+            <a class="facebook" *ngIf="configCollectionFooter.element.facebook">
+              <include-components [elements]="configCollectionFooter.element.facebook"></include-components>
+            </a>
+            <a class="twitter" *ngIf="configCollectionFooter.element.twitter">
+              <include-components [elements]="configCollectionFooter.element.twitter"></include-components>
+            </a>
+            <a class="linkedin" *ngIf="configCollectionFooter.element.linkedin">
+              <include-components [elements]="configCollectionFooter.element.linkedin"></include-components>
+            </a>
+            <a class="gplus" *ngIf="configCollectionFooter.element.gplus">
+              <include-components [elements]="configCollectionFooter.element.gplus"></include-components>
+            </a>
+            <a class="youtube" *ngIf="configCollectionFooter.element.youtube">
+              <include-components [elements]="configCollectionFooter.element.youtube"></include-components>
+            </a>
+            <a class="xing" *ngIf="configCollectionFooter.element.xing">
+              <include-components [elements]="configCollectionFooter.element.xing"></include-components>
+            </a>
+            <a class="whatsapp" *ngIf="configCollectionFooter.element.whatsapp">
+              <include-components [elements]="configCollectionFooter.element.whatsapp"></include-components>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

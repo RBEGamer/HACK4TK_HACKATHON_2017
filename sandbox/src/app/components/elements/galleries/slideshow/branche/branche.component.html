@@ -1,0 +1,15 @@
+<div class="slide">
+  <img *ucpIsset="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+       title="{{element.image.title}}"/>
+
+  <div class="text-box" [class.open]="true">
+    <div [ngClass]="getPositionClass()">
+      <p class="subhead" *ngIf="element.subHeadline">{{element.subHeadline}}</p>
+      <p class="header" *ngIf="element.headline">{{element.headline}}</p>
+      <p class="copy" *ngIf="element.description">
+        {{element.description}}
+      </p>
+      <include-components *ngIf="element.link" class="button" [elements]="element.link"></include-components>
+    </div>
+  </div>
+</div>

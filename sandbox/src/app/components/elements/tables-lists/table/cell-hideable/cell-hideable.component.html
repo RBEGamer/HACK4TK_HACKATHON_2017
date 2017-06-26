@@ -1,0 +1,15 @@
+<div *ngFor="let detailGroup of element.content" class="footable-row-detail-inner">
+  <div *ngIf="detailGroup.headline" class="footable-row-detail-group" [innerHtml]="detailGroup.headline"></div>
+  <div *ngFor="let detail of detailGroup.content" class="footable-row-detail-row">
+    <div *ngIf="isThatObject(detail.name.content)" class="footable-row-detail-name">
+      name>{{detail | json}}<
+      <include-components [elements]="detail.name.content"></include-components>
+    </div>
+    <div *ngIf="isThatObject(detail.value.content)" class="footable-row-detail-name">
+      value>{{detail.value.content | json}}<
+      <include-components [elements]="detail.value.content"></include-components>
+    </div>
+    <div class="footable-row-detail-name" *ngIf="!isThatObject(detail.name.content)" [innerHtml]="detail.name.content"></div>
+    <div class="footable-row-detail-value" *ngIf="!isThatObject(detail.value.content)" [innerHtml]="detail.value.content"></div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<!-- 01.07 Event element -->
+<div class="eventdownload">
+  <p class="headline" *ngIf="element.domHtml" [innerHtml]="element.domHtml"></p>
+  <div *ngFor="let link of element.linkList">
+    <include-components [elements]="link"></include-components>
+  </div>
+</div>

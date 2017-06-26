@@ -1,0 +1,260 @@
+@import (reference) "../../../_includes";
+
+/* 07.03 Tab Container */
+:host-context(#bottom) {
+  @moduleContainer();
+}
+
+:host-context(#main), :host-context(#bottom), :host-context(#stage) {
+  .tab-container {
+    margin-bottom: @baseVertOffset;
+
+    @media @toTablet {
+      margin-bottom: @s2;
+    }
+    @media @toMobile {
+      margin-bottom: @s3;
+    }
+
+    .headline {
+      .t4();
+      margin: 0 0 @s6;
+    }
+
+    .r-tabs-nav {
+      display: table;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      table-layout: fixed;
+      width: 100%;
+
+    }
+    .r-tabs-tab {
+      .box-sizing(border-box);
+      border-bottom: 1px solid @lighterGray;
+      display: table-cell;
+      margin: 0;
+      padding-left: @s9;
+      text-align: left;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &.r-tabs-state-active {
+        border-bottom: 1px solid #FFFFFF;
+      }
+
+      a {
+        .box-sizing(border-box);
+        .t5();
+        background-color: @lighterGray;
+        border-left: 1px solid @lighterGray;
+        border-right: 1px solid @lighterGray;
+        border-top: 1px solid @lighterGray;
+        display: block;
+        padding: (@s5 - 2) @s5;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: @electricBlue;
+          color: @white;
+        }
+      }
+      &.r-tabs-state-active a {
+        background-color: @white;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: @electricBlue;
+        }
+      }
+    }
+    .lt-ie9 & li.r-tabs-state-active {
+      border-bottom: 1px solid @white;
+    }
+
+    .r-tabs-panel {
+      border-bottom: 1px solid @lighterGray;
+      border-left: 1px solid @lighterGray;
+      border-right: 1px solid @lighterGray;
+      display: none;
+      margin-top: -1px;
+      padding: @s4 @s5;
+
+      &.r-tabs-state-active {
+        display: block;
+      }
+
+      @media @toMobile {
+        padding-top: @s6;
+
+        .image-gallery {
+          .owl-next {
+            right: -13px;
+          }
+          .owl-prev {
+            left: -13px;
+          }
+        }
+      }
+
+      > div {
+        margin-bottom: @s4;
+      }
+
+    }
+    .r-tabs-accordion-title {
+      display: none;
+
+      @media @toMobile {
+        display: block;
+        margin-top: @s8;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        a {
+          .t7();
+          background-color: @lighterGray;
+          border-left: 1px solid @lighterGray;
+          border-right: 1px solid @lighterGray;
+          border-top: 1px solid @lighterGray;
+          display: block;
+          padding: (@s6 + 2) @s5;
+          text-decoration: none;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: @electricBlue;
+            color: @white;
+          }
+
+          .icon-font();
+          .icon-tk-plus();
+          &:before {
+            .em(19, 18);
+            float: right;
+            margin-left: @s8;
+            margin-top: @s9;
+          }
+          .no-js &:before {
+            display: none;
+          }
+        }
+
+        &.r-tabs-state-active a {
+          background-color: @white;
+          .icon-tk-minus();
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: transparent;
+            color: @electricBlue;
+          }
+        }
+      }
+    }
+  }
+}
+
+:host-context(#full-width), :host-context(#stage) {
+  > .tab-container {
+    margin-bottom: 0;
+
+    @media @toMobile {
+      margin-left: (@baseHorzOffset - 3);
+      margin-right: (@baseHorzOffset - 3);
+    }
+
+    .tabs {
+      display: block;
+      text-align: center;
+
+      @media @toMobile {
+        display: none;
+      }
+
+      &:after {
+        background-color: @lighterGray;
+        content: "";
+        display: block;
+        height: 1px;
+        position: relative;
+        top: -1px;
+        z-index: 1;
+
+        .clearfix;
+        margin: 0 auto 0;
+        max-width: @maxWidth;
+        width: @maxWidth;
+
+        @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+          margin: 0 @pageOffset - 4px;
+          width: auto;
+        }
+        @media screen and (max-width: 979px) {
+          margin-left: @middlePageOffset - 3px;
+          margin-right: @middlePageOffset - 3px;
+        }
+        @media @toTablet {
+          margin: 0 @baseHorzOffset;
+          width: auto;
+        }
+        @media @toMobile {
+          margin: 0 (@baseHorzOffset - 3);
+        }
+
+        .lt-ie9 & {
+          width: @contentWidthIE;
+        }
+      }
+
+      .r-tabs-tab {
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    .pane {
+      border: none;
+      padding-left: 0;
+      padding-right: 0;
+
+      @media @toMobile {
+        border-left: 1px solid @lighterGray;
+        border-right: 1px solid @lighterGray;
+        border-bottom: 1px solid @lighterGray;
+      }
+
+      > div {
+        .baseVertOffset;
+      }
+
+      > .module-container {
+        margin-bottom: 0;
+      }
+
+      > .bg-color-wrapper + .bg-color-wrapper {
+        margin-top: -@s1;
+
+        @media @toTablet {
+          margin-top: -@s2;
+        }
+
+        @media @toMobile {
+          margin-top: -@s3;
+        }
+      }
+    }
+  }
+}
+

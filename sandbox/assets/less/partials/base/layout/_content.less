@@ -1,0 +1,22 @@
+.main__content {
+  min-height: 600px;
+
+  //.column(8);
+  display: inline-block;
+  float: left;
+  width: 69%;
+  margin-left: 0.37202381%;
+  margin-right: 0.37202381%;
+  > div {
+    //because of some floating modules
+    clear: both;
+  }
+
+  @media @bigTablet {
+    .column(12);
+  }
+
+  @media @toMobile {
+    margin-bottom: @baseVertOffset;
+  }
+}

@@ -1,0 +1,17 @@
+#sidebar {
+  .column(3);
+  float: right;
+
+  @media @bigTablet {
+    .column(12);
+  }
+
+  > div {
+    //because of some floating modules
+    clear: both;
+  }
+
+  > h2 {
+    .t4;
+  }
+}

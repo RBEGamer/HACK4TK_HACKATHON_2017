@@ -1,0 +1,133 @@
+@import (reference) "../../../_includes";
+/* Sitemap Styles */
+:host-context(#main) .sitemap {
+  .clearfix();
+  .t5();
+
+  h1 {
+    .t3();
+    margin-bottom: @s2;
+    text-align: center;
+
+    @media @toMobile {
+      margin-bottom: @s4;
+      text-align: left;
+    }
+  }
+
+  h3 {
+    .t5();
+    color: @middleGray;
+    margin-bottom: @s9;
+    text-align: center;
+
+    @media @toMobile {
+      text-align: left;
+    }
+  }
+
+  .col {
+    float: left;
+    margin-right: 1%;
+    position: relative;
+    width: 32%;
+
+    @media @toMobile {
+      border-bottom: 1px solid @lightGray;
+      margin-bottom: @s4;
+      padding-bottom: @s4;
+      width: 100%;
+
+    }
+
+    @media @fromMobileToTablet {
+      margin-right: 1%;
+      width: 49%;
+    }
+  }
+
+  .headline {
+    color: @electricBlue;
+    display: block;
+    font-family: @mediumFontFamily;
+    margin-bottom: @s9;
+    text-decoration: none;
+
+    & + ul {
+      margin-top: 0;
+    }
+
+    a.headline:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  .divider {
+    clear: both;
+
+    &.mid {
+      display: none;
+
+      @media @fromMobileToTablet {
+        display: block;
+        float: left;
+        margin-bottom: @s4;
+        margin-top: @s4;
+        position: relative;
+        width: 100%;
+      }
+    }
+
+    &.big {
+      float: left;
+      margin-bottom: @s3;
+      margin-top: @s3;
+      position: relative;
+      width: 100%;
+
+      @media @fromMobileToTablet {
+        display: none;
+      }
+
+      @media @toMobile {
+        display: none;
+      }
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+    margin-left: @s5;
+    margin-top: @s4;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  li {
+    list-style: none;
+    margin-bottom: @s9;
+
+    ul {
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-left: @s4;
+    }
+
+    /deep/ a {
+      color: @middleGray;
+      text-decoration: none;
+
+      & + ul {
+        margin-top: @s9;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}

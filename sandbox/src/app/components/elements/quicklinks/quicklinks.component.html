@@ -1,0 +1,10 @@
+<div class="quicklinks" [ngClass]="element.design">
+  <div class="quicklinks-content">
+    <div *ngIf="element.topheadlineHtml" class="headline" [innerHTML]="element.topheadlineHtml"></div>
+    <ul class="quicklinks-items" *ucpIsset="element.linklist">
+      <li class="quicklinks-item" *ngFor="let link of element.linklist">
+        <include-components [elements]="[link]"></include-components>
+      </li>
+    </ul>
+  </div>
+</div>

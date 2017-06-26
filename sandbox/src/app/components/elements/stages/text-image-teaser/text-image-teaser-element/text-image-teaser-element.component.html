@@ -1,0 +1,23 @@
+<!-- 06_17 Image Text Teaser Element-->
+
+<div class="text-image-teaser-element bg-color-wrapper" [ngClass]="getStyleCSS()">
+  <div class="module-container">
+    <div class="module-image-video-container" [ngClass]="[getPostionCSS(),getLayoutCSS()]">
+
+      <h2 *ngIf="element.headlineHtml" [innerHTML]="element.headlineHtml"></h2>
+
+      <img *ngIf="element.mediaType == 'image' && element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+           title="{{element.image.title}}" class="image"/>
+
+      <include-components *ngIf="element.mediaType == 'video'" [elements]="element.video"
+                          [ngClass]="small"></include-components>
+
+      <div class="module-wrapper">
+        <div *ngIf="element.textHtml" class="paragraph" [innerHTML]="element.textHtml"></div>
+        <include-components *ucpIsset="element.link" [elements]="element.link"
+                            [ngClass]="element.linkDesign ? element.linkDesign:'more'"></include-components>
+      </div>
+    </div>
+  </div>
+</div>
+

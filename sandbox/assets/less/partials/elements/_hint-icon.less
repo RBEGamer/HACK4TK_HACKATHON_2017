@@ -1,0 +1,37 @@
+@import (reference) "../../_includes/_variables";
+@import (reference) "../../_includes/_helpers";
+@import (reference) "../../_includes/_grid";
+
+// Video & Quiz Icon
+.hint-icon-wrapper {
+  position: absolute;
+  left: 0px;
+  top: @s6;
+  height: 34px;
+
+  .video-icon, .quiz-icon {
+    .t5();
+    .icon-font;
+    .icon-tk-video;
+    background-color: @white;
+    color: @darkGray;
+    display: block;
+    float: left;
+    margin-right: @s5;
+    padding: 4px @s5+30px 4px @s5;
+    position: relative;
+    z-index: 1;
+
+    &.quiz-icon {
+      .icon-tk-quiz;
+    }
+
+    &:before {
+      font-size: 28px;
+      right: 12px;
+      display: block;
+      position: absolute;
+      top: 3px
+    }
+  }
+}

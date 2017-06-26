@@ -1,0 +1,178 @@
+//Frame
+@maxWidth: 1345px;
+@contentWidthIE: 940px;
+
+// Typography
+@baseFontFamily: tktype, Arial, Verdana, sans-serif;
+@mediumFontFamily: tktypemedium, Arial, Verdana, sans-serif;
+@baseFontSize: 16px;
+@baseFontSizeDouble: 32px;
+
+//Head transition
+@headTransitionSpeed: 0.5s;
+
+// Rebranding colors
+@electricBlue: #00A0F0;
+@white: #ffffff;
+@darkGray: #4B5564;
+@middleGray: #78879B;
+@lightGray: #D9DEE8;
+@lighterGray: #EEF0F2;
+@black: #000000;
+@darkBlue: #003C7D;
+@signalOrange: #FFB400;
+@signalRed: #D7005F;
+@signalYellow: #FFE100;
+@signalGreen: #00A58C;
+
+// google yellow:
+
+//Special Colors
+@placeholderColor: #a9a9a9;
+@middleRed: #a53722;
+
+// Layout & Grid
+@baseHorzOffset: 22px;
+@baseVertOffset: @s1; /* deprecated in favour of .baseVertOffset mixin */
+@pageOffset: 40px;
+@middlePageOffset: 28px;
+@mobileHorzOffset: 0;
+@gutter-width: 10;
+@columns: 12;
+@scrollbarOffset: 18px;
+
+@media @toTablet {
+	@gutter-width: 8;
+}
+@media @toMobile {
+	@gutter-width: 4;
+}
+
+// Module layout rebranding
+@s0: @baseFontSize * 7.594;	//rot
+@s1: @baseFontSize * 5.063;	//gelb
+@s2: @baseFontSize * 3.375;	//braun
+@s3: @baseFontSize * 2.25;	//hellgrün
+@s4: @baseFontSize * 1.5;	//dunkelgrün
+@s5: @baseFontSize;			//lila
+@s6: @baseFontSize * 0.667;	//orange
+@s7: @baseFontSize * 0.444;	//türkis
+@s8: @baseFontSize * 0.296;	//rosa
+@s9: @baseFontSize * 0.125;	//hellblau
+
+// Breakpoints
+@minAll: 320px;
+@maxMobile: unit((unit(@minTablet) - 1), px);
+@minTablet: 500px;
+@softTablet: 630px;
+@overSoftTablet: unit((unit(@softTablet) + 1), px);
+@maxTablet: unit((unit(@minDesktop) - 1), px);
+@minDesktop: 768px;
+@maxBigTablet: 900px;
+@overBigTablet: unit((unit(@maxBigTablet) + 1), px);
+@tabletLandscapePortrait: 1100px;
+@maxDesktop: unit((unit(@minDesktopWide) - 1), px);
+@minDesktopWide: 1280px;
+@maxAll: 1600px;
+@redactionalBP: 400px;
+@minBigDesktop: 1900px;
+
+@toMobile: ~"screen and (max-width: @{maxMobile})";
+@fromMobileToTablet: ~"screen and (min-width: @{minTablet}) and (max-width: @{maxTablet})";
+@fromMobileToBigTablet: ~"screen and (min-width: @{minTablet}) and (max-width: @{maxBigTablet})";
+@toSoftTablet: ~"screen and (max-width: @{softTablet})";
+@fromSoftTablet: ~"screen and (min-width: @{overSoftTablet})";
+@toTablet: ~"screen and (max-width: @{maxTablet})";
+@fromTablet: ~"screen and (min-width: @{minDesktop})";
+@fromTabletToDesktop: ~"screen and (min-width: @{minDesktop}) and (max-width: @{maxDesktop})";
+@tabletLP: ~"screen and (max-width: @{tabletLandscapePortrait})";
+@bigTablet: ~"screen and (max-width: @{maxBigTablet})";
+@fromBigTablet: ~"screen and (min-width: @{overBigTablet})";
+@toDesktop: ~"screen and (max-width: @{maxDesktop})";
+@allButMobile: ~"screen and (min-width: @{minTablet})";
+@fromBigDesktop: ~"screen and (min-width: @{minBigDesktop})";
+
+@toMinDesktopWide: ~"screen and (max-width: @{minDesktopWide})";
+@toRedactionalBP: ~"screen and (max-width: @{redactionalBP})";
+
+@fromDesktopToWide: ~"screen and (min-width: @{minDesktopWide}) and (max-width: @{maxAll})";
+@toDesktopWide: ~"screen and (max-width: @{maxAll})";
+@retina: ~"screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2)";
+@retinaMobile: ~"screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) and (max-width: @{maxMobile})";
+
+/* Header Breakpoints */
+@headerTabletBP: ~"screen and (max-width: @{maxBigTablet})";
+@minHeaderTabletBP: ~"screen and (min-width: @{overBigTablet})";
+@headerMobileBP: ~"screen and (max-width: @{maxMobile})";
+
+// Sprite
+.sprite(@left: 0, @top: 0, @repeat: no-repeat) {
+	background: url(/assets/img/layout/sprite.png) @arguments;
+
+	// http://miekd.com/articles/using-css-sprites-to-optimize-your-website-for-retina-displays/
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+
+		// Reference the @2x Sprite
+		background-image: url(/assets/img/layout/sprite2x.png);
+
+		// Translate the @2x sprite's dimensions back to 1x
+		background-size: 500px 1000px;
+	}
+}
+
+// Backgrounds & Paths
+@bgStripes: '/assets/img/layout/hintergrund_streifen.png';
+@svgPath: '/assets/img/layout';
+
+@fontPath: '/assets/fonts';
+
+/* Font sizes, values in px (don't use these variables, use the functions under "Fonts" below) */
+@t1: 81;
+@t2: 54;
+@t3: 36;
+@t4: 24;
+@t5: 16;
+@t6: 12;
+@t7: 18;
+@t8: 14;
+
+/* Fonts */
+.t1(@parentFontSize: @baseFontSize) {
+	.em(@t1, 100, @parentFontSize);
+}
+.t2(@parentFontSize: @baseFontSize) {
+	.em(@t2, 70, @parentFontSize);
+}
+.t3(@parentFontSize: @baseFontSize) {
+	.em(@t3, 49, @parentFontSize);
+}
+.t4(@parentFontSize: @baseFontSize) {
+	.em(@t4, 33, @parentFontSize);
+}
+.t5(@parentFontSize: @baseFontSize) {
+	.em(@t5, 26, @parentFontSize);
+
+  @media @toMobile{
+	.em(@t7, 26, @parentFontSize);
+  }
+}
+.t6(@parentFontSize: @baseFontSize) {
+	.em(@t6, 16, @parentFontSize);
+
+  @media @toMobile{
+	.em(@t8, 20, @parentFontSize);
+  }
+}
+
+/* Only mobile fonts */
+.t7(@parentFontSize: @baseFontSize) {
+	.em(@t7, 26, @parentFontSize);
+}
+.t8(@parentFontSize: @baseFontSize) {
+	.em(@t8, 20, @parentFontSize);
+}
+
+/* Videos */
+@playIconSizeSmall: 40px;
+@playIconSizeNormal: 60px;
+@playIconSizeBig: 100px;

@@ -1,0 +1,208 @@
+@import (reference) "../../../../_includes";
+
+:host-context(#main),
+:host-context(#bottom),
+:host-context(#stage),
+.slide {
+  position: relative;
+  text-align: center;
+
+  img {
+    display: inline-block;
+    width: 100%;
+
+    @media @toMobile {
+      margin-bottom: @s5;
+    }
+  }
+
+  /deep/ .overlay {
+    .t5();
+    bottom: @s4;
+    left: 0;
+    max-height: 80%;
+    position: absolute;
+    text-align: left;
+    width: 80%;
+
+    @media @toMobile {
+      bottom: auto;
+      left: auto;
+      max-height: 100%;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    .headline {
+      .box-sizing(border-box);
+      .clearfix();
+      background-color: @electricBlue;
+      cursor: pointer;
+      color: @white;
+      padding: @s8 @s5;
+
+      @media @toMobile {
+        background-color: @white;
+        cursor: auto;
+        color: @black;
+        padding: 0;
+      }
+
+      &.active {
+        margin-bottom: @s7;
+
+
+        .more {
+          .icon-tk-arrow-up(after) !important; /* TODO an Sarah */
+          font-size:  0 ;
+          margin-top:  0;
+          padding-right: 0 ;
+
+          &:after {
+            font-size: 20px;
+            position: relative;
+          }
+
+          @media @toMobile {
+            .t5();
+          }
+        }
+      }
+
+      > div {
+        .clearfix();
+
+        p, div {
+          display: block;
+          float: left;
+          margin-bottom: 0;
+          margin-right: 2%;
+          margin-top: 0;
+          max-width: 79%;
+
+          @media @toSoftTablet {
+            .t6();
+          }
+
+          @media @toMobile {
+            .t4();
+            float: none;
+            margin-bottom: @s6;
+            margin-right: 0;
+            max-width: 100%;
+          }
+
+          &.more {
+            .box-sizing(border-box);
+            .icon-font(after);
+            .icon-tk-arrow-down(after);
+            cursor: pointer;
+            display: block;
+            float: right;
+            margin-top: 0;
+            margin-right: 0;
+            max-width: 19%;
+            padding-left: 0;
+            position: relative;
+
+            &:after {
+              float: right;
+              font-size: 20px;
+              font-weight: bold;
+              position: absolute;
+              right: 0;
+              top: 3px;
+            }
+
+            @media @toSoftTablet {
+              .t6();
+
+              &:after {
+                top: 3px;
+              }
+            }
+
+            @media @toMobile {
+              .t5();
+              color: @electricBlue;
+              display: inline-block;
+              float: none;
+              margin-bottom: 0;
+              max-width: 100%;
+              padding-right: (@s4 + 5px);
+
+              &:after {
+                top: 5px;
+              }
+            }
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+    }
+
+    /deep/ p {
+      margin-bottom: 0;
+    }
+
+    /deep/ .text-container {
+      .box-sizing(border-box);
+      background-color: @white;
+      position: static;
+      visibility: visible;
+      display: block;
+      word-wrap: break-word;
+
+      @media @toMobile {
+        padding: 0 0 @s4;
+      }
+
+      p {
+        margin-bottom: 0;
+
+        & + p {
+          margin-top: @s5;
+        }
+      }
+
+      a.more {
+        margin-top: @s6;
+
+        @media @toMobile {
+          .t5();
+        }
+
+        &:after {
+          font-size: 15px;
+          margin-left: 2px;
+          top: auto;
+        }
+      }
+    }
+
+    .mobile-less {
+      .t5();
+      .icon-font(after);
+      .icon-tk-arrow-down(after);
+      cursor: pointer;
+      color: @electricBlue;
+      display: none;
+      margin: 0;
+      max-width: 100%;
+
+      &:after {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 10px;
+        position: relative;
+        top: 4px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,6 @@
+<div class="empty-placeholder">
+  Component "{{className}}" <span *ngIf="key">({{key}})</span> is not available
+  <span *ngIf="this.element" class="show" (click)="toggleConfiguration()">(...)</span>
+  <pre [ngClass]="{visible:showConfiguration}">element = {{getConfiguration()}}
+  </pre>
+</div>

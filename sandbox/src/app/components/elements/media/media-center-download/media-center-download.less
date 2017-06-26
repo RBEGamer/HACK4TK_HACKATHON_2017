@@ -1,0 +1,470 @@
+@import "../../../_includes";
+
+/* 04.04 / 04.05 Mediacentre-List | Documents-, Images- & Videos-Download */
+:host-context(#main) {
+  .mediacentre-list {
+    margin-bottom: @baseVertOffset;
+
+    @media @toTablet {
+      margin-bottom: @s2;
+    }
+
+    @media @toMobile {
+      margin-bottom: @s3;
+    }
+
+    .headline {
+      .t4();
+      color: @black;
+      margin: 0 0 @s6;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+    }
+    li {
+      .clearfix;
+      background-color: @lighterGray;
+      display: block;
+      margin-bottom: 0;
+      margin-top: @s7;
+
+      @media @toMobile {
+        margin-top: 0;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    /deep/ a {
+      text-decoration: none;
+    }
+
+    //Press-Center
+    /deep/ .image-wrapper {
+      float: left;
+      padding: @s4 @s6 @s4 @s5;
+      width: 30.2%;
+
+      & + .caption {
+        padding: @s4 @s5 @s4 0;
+
+        @media @toMobile {
+          padding: @s4 @s5;
+        }
+      }
+
+      @media @bigTablet {
+        width: 33%;
+      }
+
+      @media @toMobile {
+        .box-sizing(border-box);
+        float: none;
+        padding-right: @s5;
+        width: 100%;
+      }
+
+      .image {
+        display: table;
+        margin-bottom: 0;
+        padding: 0;
+        table-layout: fixed;
+        text-align: center;
+        width: 100%;
+
+        a {
+          display: inline-block;
+          max-width: 100%;
+          position: relative;
+          text-align: center;
+          text-decoration: none;
+        }
+        figure {
+          background-color: @white;
+          .box-sizing(border-box);
+          display: table-cell;
+          padding: 2px;
+        }
+
+        img {
+          max-width: 100%;
+          max-height: 178px;
+          height: auto;
+          width: auto;
+          @media @toMobile {
+            max-height: inherit;
+          }
+        }
+      }
+    }
+
+    //Download Modules
+    /deep/ .image {
+      display: table;
+      float: left;
+      margin-bottom: 0;
+      padding: @s4 @s6 @s4 @s5;
+      table-layout: fixed;
+      text-align: center;
+      width: 28%;
+
+      @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+        width: 37%;
+      }
+
+      @media @bigTablet {
+        width: 33%;
+      }
+
+      @media @toMobile {
+        .box-sizing(border-box);
+        float: none;
+        padding-right: @s5;
+        width: 100%;
+      }
+
+      a {
+        display: inline-block;
+        max-width: 100%;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      figure {
+        background-color: @white;
+        .box-sizing(border-box);
+        display: table-cell;
+        padding: 2px;
+        width: 100%;
+        height: 100%;
+
+        img {
+          max-width: 100%;
+          height: 160px;
+          width: auto;
+
+          @media @bigTablet {
+            height: auto;
+            max-height: 160px;
+          }
+          @media @toMobile {
+            max-height: 300px;
+          }
+        }
+      }
+    }
+
+    /deep/ .caption {
+      overflow: hidden;
+      padding: @s4 @s5;
+
+      .lt-ie9 & {
+        .em(13, 16);
+        font-family: 'tktypebold';
+      }
+    }
+
+    /deep/ .image + .caption {
+      padding-left: 0;
+
+      @media @toMobile {
+        padding-top: 0;
+        padding-left: @s5;
+      }
+    }
+    /deep/ .title {
+      .t5();
+      color: @middleGray;
+      margin-bottom: 0;
+    }
+    /deep/ .info {
+      .t6();
+      color: @black;
+      margin-bottom: @s6;
+    }
+
+    /deep/ .pr-content {
+      .t5();
+      color: @middleGray;
+      margin-bottom: 0;
+    }
+
+    /deep/ .download-links {
+      .clearfix;
+      display: block;
+
+      li {
+        .t5();
+        background: none;
+        float: left;
+        margin: 0 7px 0 0;
+        padding: @s6 7px 0 0;
+      }
+      a {
+        text-decoration: none;
+        text-transform: lowercase;
+        .icon-font;
+        .icon-tk-download;
+
+        &:before {
+          display: inline-block;
+          font-size: 18px;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    /* Load More Button */
+    /deep/ .load-more {
+      .show-more();
+    }
+
+    /deep/ &.publications {
+      .caption {
+        .title {
+          .t6();
+        }
+
+        .title,
+        .headline {
+          color: @black;
+          margin-bottom: 5px;
+        }
+
+        p {
+          color: @middleGray;
+          margin: 0;
+        }
+      }
+    }
+
+    /* Special Mobile Styles for Application Pages */
+    @media @toMobile {
+      .application & {
+        .image-wrapper {
+          border-bottom: @s7 solid @white;
+        }
+        .caption {
+          border-bottom: @s5 solid @white;
+        }
+      }
+    }
+
+  }
+
+  :host-context(#sidebar) .mediacentre-list {
+    margin-bottom: @s3;
+
+    > ul {
+      > li {
+        margin-bottom: @s7;
+      }
+    }
+    /deep/ .image {
+      float: none;
+      margin: 0 auto;
+      padding: @s4 0 @s5 0;
+      width: 89%;
+
+      @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+        width: 89%;
+      }
+      @media @bigTablet {
+        float: left;
+        margin: 0;
+        padding: @s4 @s6 @s4 @s5;
+        width: 33%;
+      }
+      @media @toMobile {
+        .box-sizing(border-box);
+        float: none;
+        margin: 0;
+        padding: @s4 @s5 @s4 @s5;
+        width: 100%;
+      }
+
+      figure {
+        height: 100%;
+
+        img {
+          max-height: 210px;
+
+          @media @bigTablet {
+            max-height: 150px;
+          }
+          @media @toMobile {
+            max-height: 300px;
+          }
+        }
+      }
+    }
+
+    /deep/ .caption {
+      padding: @s4 @s5;
+    }
+    /deep/ .image + .caption {
+      padding-top: 0;
+
+      @media @bigTablet {
+        border-top: none;
+        padding-left: 0;
+        padding-top: @s4;
+      }
+
+      @media @toMobile {
+        padding-top: 0;
+        padding-left: @s5;
+      }
+    }
+    /deep/ .download-links {
+      .clearfix;
+      li {
+        .t5();
+      }
+    }
+    a {
+      text-align: center;
+    }
+  }
+
+  // 04.05 Videos Download
+  .mediacentre-list.videos {
+    /deep/ .video {
+      background-color: @white;
+      border: 1px solid @lighterGray;
+      .box-sizing(border-box);
+      float: left;
+      margin: @s4 @s6 @s4 @s5;
+      padding: 3px;
+      text-align: center;
+      width: 28%;
+
+      @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+        width: 37%;
+      }
+
+      @media @bigTablet {
+        width: 33%;
+      }
+
+      @media @toMobile {
+        float: none;
+        margin: @s4 @s5 @s4 @s5;
+        width: auto;
+      }
+
+      .preview {
+        display: inline-block;
+
+        &:before {
+          .lt-ie9 & {
+            margin-left: -27px;
+            margin-top: -27px;
+          }
+        }
+      }
+    }
+
+    /deep/ .video + .caption {
+      padding-left: 0;
+
+      @media @toMobile {
+        padding-top: 0;
+        padding-left: @s5;
+      }
+    }
+  }
+
+  :host-context(#sidebar) .mediacentre-list.videos {
+    /deep/ .video {
+      border-left: @s5 solid @lighterGray;
+      border-right: @s5 solid @lighterGray;
+      float: none;
+      height: 100%;
+      margin: @s4 0 @s4 0;
+      width: 100%;
+
+      @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+        width: 100%;
+      }
+
+      @media @bigTablet {
+        border: 0;
+        float: left;
+        margin: @s4 @s6 @s4 @s5;
+        width: 33%;
+      }
+
+      @media @toMobile {
+        float: none;
+        height: 100%;
+        margin: @s4 @s5 @s4 @s5;
+        width: auto;
+      }
+    }
+
+    /deep/ .video + .caption {
+      padding-top: 0;
+      padding-left: @s5;
+
+      @media @bigTablet {
+        border-top: none;
+        padding-left: 0;
+        padding-top: @s4;
+      }
+
+      @media @toMobile {
+        padding-top: 0;
+        padding-left: @s5;
+      }
+    }
+  }
+  /* ################# */
+
+  .mediacentre-list /deep/ .video,
+  :host-context(#sidebar) /deep/ .video,
+  /deep/ .small.video {
+    .preview {
+      .icon-tk-play();
+
+      &:before {
+        .translate(-50%, -50%);
+
+        .lt-ie9 & {
+          margin-left: -30px;
+          margin-top: -30px;
+        }
+      }
+
+      .lt-ie9 & {
+        &:before {
+          content: none;
+        }
+
+        .play-icon {
+          .sprite(-449px, -651px);
+          height: 52px;
+          left: 50%;
+          margin-left: -26px;
+          margin-top: -26px;
+          position: absolute;
+          text-indent: -9999px;
+          top: 50%;
+          width: 52px;
+        }
+      }
+    }
+  }
+
+  :host-context(#sidebar) /deep/ .video.mi24 .wrapper {
+    padding-bottom: 67.75%;
+  }
+}

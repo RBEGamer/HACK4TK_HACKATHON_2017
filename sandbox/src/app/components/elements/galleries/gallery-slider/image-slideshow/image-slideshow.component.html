@@ -1,0 +1,22 @@
+<div class="slide">
+  <img *ucpIsset="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+       title="{{element.image.title}}"/>
+  <div class="overlay">
+    <div class="headline" [class.active]="getActive()" (click)="openText()">
+      <div>
+        <div *ngIf="element.textPicture1Html" [innerHtml]="element.textPicture1Html"></div>
+        <p *ngIf="element.labelShowMore" class="more">{{element.labelShowMore}}</p>
+      </div>
+    </div>
+
+    <!--hidden: -->
+    <ng-container *wrapInComponentIfExists="element.link"> <!-- Workaround, da no-text-links aus dem CMS kommen! -->
+      <div [innerHtml]="element.captionHtml" class="text-container"
+           data-ellipsis="5" [@movePanel]="state">
+      </div>
+    </ng-container>
+
+    <p *ngIf="element.labelShowLess" class="mobile-less">{{element.labelShowLess}}</p>
+  </div>
+</div>
+

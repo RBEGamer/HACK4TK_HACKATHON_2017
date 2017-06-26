@@ -1,0 +1,20 @@
+<!-- 03.01 Image -->
+<div class="image">
+  <p class="headline" *ngIf="element.headlineHtml" [innerHTML]="element.headlineHtml"></p>
+  <figure>
+    <!-- TODO: wrapInComponent (link) -->
+    <a *ucpIsset="element.link" [routerLink]="element.link" (click)="showInLightbox($event)">
+      <img *ngIf="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+           title="{{element.image.title}}"/>
+      <div [ngClass]="{'zoom': element.lightbox}" *ngIf="element.image">
+      </div>
+    </a>
+    <a *ucpIsEmpty="element.link" (click)="showInLightbox($event)">
+      <img *ngIf="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+           title="{{element.image.title}}"/>
+      <div class="zoom" *ngIf="element.image">
+      </div>
+    </a>
+    <figcaption *ngIf="element.textHtml" [innerHTML]="element.textHtml"></figcaption>
+  </figure>
+</div>

@@ -1,0 +1,19 @@
+<tr *ngFor="let row of element.content" custom-row [logicalRow]="row.parameters.logicalRow"
+    (mouseenter)="onMouseEnterRow(row.parameters.logicalRow)" class="{{row.parameters.class}}"
+    [ngClass]="{hover: highlightedLogicalRow == row.parameters.logicalRow}">
+  <ng-container *ngFor="let cell of row.content">
+    <th *ngIf="cell.tag == 'tableHeadCell' && !isThatObject(cell.content)" [attr.rowspan]="cell.parameters.rowspan"
+        [attr.colspan]="cell.parameters.colspan" class="{{cell.parameters.class}}" [innerHtml]="cell.content"
+        style="white-space:nowrap"></th>
+    <th *ngIf="cell.tag == 'tableHeadCell' && isThatObject(cell.content)" [attr.rowspan]="cell.parameters.rowspan"
+        [attr.colspan]="cell.parameters.colspan" class="{{cell.parameters.class}}" style="white-space:nowrap">
+      <include-components [elements]="cell.content"></include-components>
+    </th>
+    <td *ngIf="cell.tag == 'tableCell' && isThatObject(cell.content)" [attr.rowspan]="cell.parameters.rowspan"
+        [attr.colspan]="cell.parameters.colspan" class="{{cell.parameters.class}}">
+      <include-components [elements]="cell.content"></include-components>
+    </td>
+    <td *ngIf="cell.tag == 'tableCell'  && !isThatObject(cell.content)" [attr.rowspan]="cell.parameters.rowspan"
+        [attr.colspan]="cell.parameters.colspan" class="{{cell.parameters.class}}" [innerHtml]="cell.content"></td>
+  </ng-container>
+</tr>

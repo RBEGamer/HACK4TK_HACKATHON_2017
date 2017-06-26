@@ -1,0 +1,32 @@
+<!-- 05.02 Contact-Form --><!-- This is the Standard Contact Form -- Other variants are newsletter.html and order-form.html -->
+<div class="contact">
+  <div class="title">
+    <h2 *ngIf="element.headline">{{element.headline}}</h2>
+
+    <p *ngIf="element.subline">{{element.subline}}.</p>
+  </div>
+  <form [formGroup]="contactForm">
+
+    <!-- generischer Ansatz -->
+    <div class="row" *ngFor="let nextField of element.inputFieldList">
+      <ucp-input-field [field]="nextField" [parentForm]="contactForm"
+                       [defaultErrorText]="element.defaultErrorText"></ucp-input-field>
+    </div>
+
+
+    <div *ngIf="element.hintHtml" class="extras">
+      <p [innerHTML]="element.hintHtml"></p>
+    </div>
+
+    <div *ngIf="message" class="error">
+      <p>{{message}}</p>
+    </div>
+
+    <div class="extras">
+      <button *ngIf="element.buttonReset" class="button contact-button-grey" type="reset" (click)="onReset">
+        {{element.buttonReset}}
+      </button>
+      <button class="button contact-button-blue" (click)="onSend()">{{element.buttonSend}}</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,9 @@
+{
+  "extends": "../tsconfig.json",
+  "angularCompilerOptions": {
+    "entryModule": "./main.browser#MainModule"
+  },
+  "exclude": [
+    "./main.server.aot.ts"
+  ]
+}

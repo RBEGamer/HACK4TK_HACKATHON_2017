@@ -1,0 +1,22 @@
+<!-- 15_03 Text-/Image-Boxes-->
+<div class="text-image-boxes">
+  <div class="box" *ngFor="let box of element.imageBoxList">
+
+    <div class="box-image">
+      <img *ngIf="box.image" [assetPath]="box.image.source" alt="{{box.image.altText}}"
+           title="{{box.image.title}}"/>
+    </div>
+
+    <div class="text-area">
+      <div *ngIf="box.headlineHtml" class="headline" [innerHTML]="box.headlineHtml">
+      </div>
+
+      <p *ngIf="box.textHtml" class="text" [innerHTML]="box.textHtml"></p>
+
+    </div>
+  </div>
+
+  <div *ucpIsset="element.link" class="cta-button">
+    <include-components [elements]="element.link"></include-components>
+  </div>
+</div>

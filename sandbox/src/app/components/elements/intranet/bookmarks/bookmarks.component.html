@@ -1,0 +1,57 @@
+<!-- Bookmarks -->
+<form [formGroup]="bookmarksForm" (ngSubmit)="onSave()">
+  <div class="theme-headline-container">
+    <p [innerHTML]="element.bookmarkGroup.headlineHtml"></p>
+
+
+    <div class="controls">
+      <a class="start-editview icon-tk-plus" (click)="switchToEditModus()">{{element.buttonEditText}}</a>
+      <a *ngIf="editModus" (click)="onEditCancel()"
+         class="cancel-editview icon-tk-close">{{element.buttonCancelText}}</a>
+    </div>
+
+
+    <div class="bookmarks-area">
+      <div id="bookmarks-container">
+        <p class="no-content" style="display: none;"></p>
+
+
+        <div class="content-item first" *ngFor="let bookmark of bookmarkEntities; let bookmarkIndex = index"
+             [class.first]="bookmarkIndex % 4  == 0">
+          <div class="item-wrapper">
+            <label>
+              <input *ngIf="editModus" name="source" type="checkbox" formControlName="{{bookmark.id}}">
+            </label>
+            <a href="{{bookmark.url}}" target="_blank">
+              <img *ngIf="element.bookmarkGroup.image.source" [assetPath]="element.bookmarkGroup.image.source"
+                   alt="{{element.bookmarkGroup.image.altText}}"
+                   title="{{element.bookmarkGroup.image.title}}"/>
+              <span>{{bookmark.name}}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="bookmark-add" *ngIf="addModus">
+        <div class="row" *ngFor="let nextField of element.editBookmark.inputFieldList">
+          <ucp-input-field [field]="nextField" [parentForm]="bookmarksForm"
+                           [defaultErrorText]="element.defaultErrorText"></ucp-input-field>
+        </div>
+
+        <div class="button-wrapper">
+          <a class="button add" (click)="onAdd()">{{element.editBookmark.buttonAddBookmarkText}}</a>
+
+          <a class="button cancel"
+             (click)="onAddCancel()">{{element.editBookmark.buttonCancelBookmark}}</a>
+        </div>
+
+      </div>
+
+      <div class="button-wrapper">
+        <a *ngIf="!addModus" class="button add" (click)="switchToAddModus()">{{element.buttonAddText}}</a>
+        <a *ngIf="editModus" class="button delete" (click)="onDelete()">{{element.buttonDeleteText}}</a>
+
+      </div>
+    </div>
+
+  </div>
+</form>

@@ -1,0 +1,47 @@
+// Container for Headlines above stage
+.headline-container {
+  .clearfix();
+  margin: @s4 auto 0;
+  max-width: @maxWidth;
+
+  .lt-ie9 & {
+    max-width: @contentWidthIE;
+    padding: 0;
+  }
+
+  @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+    max-width: none;
+    padding: 0 @pageOffset - 4px;
+  }
+
+  @media screen and (max-width: 979px) {
+    padding-left: @middlePageOffset - 3px;
+    padding-right: @middlePageOffset - 3px;
+  }
+
+  @media @bigTablet {
+    padding: 0 @middlePageOffset - 3px;
+  }
+
+  @media @toTablet {
+    padding: 0 @baseHorzOffset;
+  }
+
+  @media @toMobile {
+    padding: 0 @baseHorzOffset - 3px;
+  }
+
+  > * {
+    .box-sizing(border-box);
+    .column(12);
+    float: none;
+  }
+
+  #header + & {
+    margin: (@s4 + 66px) auto 0;
+
+    @media @toMobile {
+      margin: @s4 auto 0;
+    }
+  }
+}

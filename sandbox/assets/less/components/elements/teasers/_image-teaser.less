@@ -1,0 +1,218 @@
+@c-image-teaser: {
+  #main &,
+  #bottom &,
+  #stage & {
+    .box-sizing(border-box);
+    color: @black;
+    overflow: hidden;
+
+    a {
+      color: @black;
+      text-decoration: none;
+
+      @media screen and (min-width: @minDesktopWide) {
+        &:hover {
+          img {
+            .transform(scale(1.05) rotate(0.001deg));
+          }
+        }
+      }
+
+      &.preview {
+        &:before {
+          display: none;
+        }
+
+        figure > div {
+          .icon-font();
+          .icon-tk-play();
+          position: relative;
+
+          &:before {
+            .translate(-50%, -50%);
+            background-color: fade(@white, 80);
+            border-radius: 50%;
+            color: @electricBlue;
+            font-size: 80px;
+            left: 50%;
+            line-height: 80px;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            z-index: 10;
+
+            .lt-ie9 & {
+              margin-left: -40px;
+              margin-top: -40px;
+            }
+
+            @media @bigTablet {
+              font-size: 72px;
+              line-height: 72px;
+            }
+          }
+        }
+
+        .play-icon {
+          display: none;
+        }
+      }
+    }
+
+    img {
+      .transition(all .6s ease-in-out);
+      max-width: 100%;
+      width: 100%;
+      z-index: 1;
+
+      @media @toSoftTablet {
+        width: 100%;
+      }
+    }
+
+    figure {
+      position: relative;
+
+      > div {
+        overflow: hidden;
+      }
+
+      .target {
+        .t4;
+        background-color: @electricBlue;
+        color: @white;
+        left: @s5;
+        margin: 0;
+        padding: 17px @s7 0;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
+
+      // Cinemagraph
+      .iframe-holder {
+        .maintain-ratio(4, 3);
+
+        iframe {
+          height: 100%;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+
+      figcaption {
+        .box-sizing(border-box);
+        background-color: @white;
+        padding: @s5;
+        z-index: 5;
+
+        > div {
+
+          .headline {
+            .t6();
+            color: @middleGray;
+            margin-bottom: 0;
+            margin-top: 0;
+
+            & + .subheadline,
+            & + .text {
+              margin-top: @s5;
+            }
+          }
+
+          .subheadline {
+            .t4();
+            color: @black;
+            margin-bottom: 0;
+            margin-top: 0;
+
+            & + .text {
+              margin-top: @s5;
+            }
+          }
+
+          .text {
+            .t5();
+            color: @darkGray;
+            margin-bottom: 0;
+
+            @media @softTablet {
+              .t7();
+            }
+
+            p {
+              margin-bottom: 0;
+
+              span {
+                color: @electricBlue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  //Variant for Full Width with Different Background-Colors
+  #stage .bg-color-wrapper.lightgray &,
+  #bottom .bg-color-wrapper.lightgray & {
+    //Teaser Behaviour in Dark Background
+    background-color: @white;
+    border-left: (@s6 / 2) solid @lightGray;
+    border-right: (@s6 / 2) solid @lightGray;
+
+    @media @toSoftTablet {
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  #stage .bg-color-wrapper.middlegray &,
+  #bottom .bg-color-wrapper.middlegray & {
+    background-color: @white;
+    border-left: (@s6 / 2) solid @middleGray;
+    border-right: (@s6 / 2) solid @middleGray;
+
+    @media @toSoftTablet {
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+
+  //Variant for Sidebar
+  #sidebar & {
+    border: none;
+    float: none;
+    margin: @s6 0 0;
+    width: percentage(1);
+
+    &:first-child {
+      margin: 0;
+    }
+
+    @media @bigTablet {
+      border-left: (@s6 / 2) solid @white;
+      border-right: (@s6 / 2) solid @white;
+      float: left;
+      margin: 0 0 @s6;
+      width: percentage(1 / 2);
+    }
+
+    @media @toSoftTablet {
+      border: none;
+      float: none;
+      width: percentage(1);
+    }
+
+    @media @fromBigTablet {
+      figcaption .subheadline {
+        .t7;
+      }
+    }
+  }
+
+};

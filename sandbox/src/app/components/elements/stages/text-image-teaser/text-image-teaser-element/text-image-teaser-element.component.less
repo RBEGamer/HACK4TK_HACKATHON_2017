@@ -1,0 +1,362 @@
+@import (reference) "../../../../_includes";
+
+/* 06_17 text-image-teaser, teaser grids */
+#stage .text-image-teaser-element {
+  &.bg-color-wrapper {
+
+    padding: @s1/2 0;
+
+    h2 {
+      .t3();
+      color: @black;
+      margin: 0 0 @s4;
+
+      & + .theme-slider {
+        padding-top: 0;
+        margin-top: -6px;
+      }
+    }
+
+    h3 {
+      .t4();
+      font-weight: normal;
+      margin-bottom: @s4;
+      margin-top: 0;
+    }
+
+    &.lightgray {
+      background-color: @lightGray;
+    }
+    &.middlegray {
+      background-color: @middleGray;
+
+      .module-wrapper .paragraph {
+        color: @black;
+      }
+    }
+
+    & + .module-container {
+      margin-top: @s1 / 2;
+    }
+  }
+
+  .baseVertOffset;
+  color: @darkGray;
+
+  > h2 {
+    .t2;
+    color: @black;
+    margin: 0 auto;
+    max-width: @maxWidth;
+
+    .lt-ie9 & {
+      max-width: @contentWidthIE;
+    }
+
+    @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+      max-width: none;
+      padding: 0 @pageOffset - 4px;
+    }
+
+    @media @bigTablet {
+      padding: 0 @middlePageOffset - 3px;
+    }
+
+    @media @toTablet {
+      padding: 0 @baseHorzOffset;
+    }
+
+    @media @toMobile {
+      .t2;
+    }
+
+    & + .bg-color-wrapper {
+      margin-top: -@s8;
+
+      &.lightgray,
+      &.middlegray {
+        margin-top: @s4;
+      }
+    }
+  }
+
+  .module-image-video-container {
+    img {
+      max-width: 100%;
+    }
+
+    &.teaser-1-3 {
+      .image,
+      .video {
+        width: 41%;
+      }
+
+      .module-wrapper,
+      > h2 {
+        width: 56%;
+      }
+    }
+    &.teaser-2-3 {
+      .image,
+      .video {
+        width: 66%;
+      }
+
+      .module-wrapper,
+      > h2 {
+        width: 31%;
+      }
+    }
+    &.teaser-1-2 {
+      .image,
+      .video {
+        width: 50%;
+      }
+
+      .module-wrapper,
+      > h2 {
+        width: 46%;
+      }
+    }
+
+    &.teaser-1-3,
+    &.teaser-2-3,
+    &.teaser-1-2 {
+      .clearfix;
+      margin-bottom: 0;
+
+      > h2 {
+        .t3;
+        color: @black;
+        float: left;
+
+        @media @tabletLP {
+          float: none;
+          width: 100%;
+        }
+
+        & + .image,
+        & + .video {
+          margin-top: @s6;
+
+          @media @tabletLP {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .video.lightbox .preview {
+        bottom: 0;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        top: 0;
+        width: 100%;
+        .icon-font();
+        .icon-tk-play();
+
+        &:before {
+          background-color: fade(@white, 80);
+          border-radius: 50%;
+          color: @electricBlue;
+          left: 50%;
+          position: absolute;
+          text-align: center;
+          top: 50%;
+          .translate(-50%, -50%);
+
+          .lt-ie9 & {
+            margin-left: -60px;
+            margin-top: -60px;
+          }
+        }
+        .lt-ie9 & {
+          &:before {
+            content: none;
+          }
+
+          .play-icon {
+            .sprite(0, -651px);
+            height: 126px;
+            left: 50%;
+            margin-left: -63px;
+            margin-top: -63px;
+            position: absolute;
+            text-indent: -9999px;
+            top: 50%;
+            width: 126px;
+          }
+        }
+
+        img {
+          width: 100%;
+        }
+
+      }
+
+      .image,
+      .video {
+        margin-top: 0;
+
+        @media @toTablet {
+          width: 48%;
+        }
+
+        @media @toSoftTablet {
+          margin-bottom: @s5;
+          width: 100%;
+        }
+      }
+
+      .module-wrapper {
+        @media @toTablet {
+          width: 48%;
+        }
+
+        @media @toSoftTablet {
+          width: 100%;
+
+          .paragraph p {
+            margin-bottom: @s5;
+          }
+        }
+
+        .paragraph {
+          @media @allButMobile {
+            .introtext:first-child {
+              margin-top: -6px;
+            }
+          }
+
+          .quote {
+            padding-left: @s5;
+
+            p {
+              @localBoxShadow: @s5 0 0 @electricBlue, -@s5 0 0 @electricBlue;
+              .box-shadow(@localBoxShadow); // for padding on left and right side
+              background-color: @electricBlue;
+              color: @white;
+              display: inline;
+              box-decoration-break: clone; // Fix for Firefox, so the background/highlight/stripe on the padding aligns all the way to the left.
+              .t4();
+              text-decoration: none;
+              padding: 1px 1px 2px 1px; // So the stripe is 30px high at a font size of 24px.
+              .lt-ie9 & {
+                zoom: 1;
+                filter: progid:DXImageTransform.Microsoft.DropShadow(color='#00a0f0', offX='20', offY='0');
+                -ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color='#00a0f0',offX='20',offY='0')";
+              }
+
+              //Workaround for Ipad and Iphone
+              .safari &,
+              .chrome-mac & {
+                border-top: 6px solid @electricBlue;
+              }
+
+              //Quotation Marks
+              .de-de &:before {
+                content: "\201E";
+              }
+              .de-de &:after {
+                content: "";
+              }
+              .de-de &:after {
+                content: "\201C";
+              }
+
+              //fr es
+              .fr-fr &:before,
+              .es-es &:before {
+                content: "\00AB";
+              }
+              .fr-fr &:after,
+              .es-es &:after {
+                content: "";
+              }
+              .fr-fr &:after,
+              .es-es &:after {
+                content: "\00BB";
+              }
+
+              & + p,
+              & + a {
+                margin-top: @s5;
+              }
+            }
+          }
+
+          cite {
+            display: block;
+            font-style: normal;
+            .t5();
+            margin-top: @s5;
+
+            & + p,
+            & + a {
+              margin-top: @s5;
+            }
+          }
+
+          .position {
+            .t6;
+            color: @middleGray;
+            display: block;
+
+            & + p,
+            & + a {
+              margin-top: @s5;
+            }
+          }
+
+          .more,
+          .button-blue {
+            margin-bottom: @s5;
+          }
+        }
+      }
+
+      &.image-video-left {
+        > h2 {
+          float: right;
+        }
+
+        .image,
+        .video {
+          float: left;
+        }
+
+        .module-wrapper {
+          float: right;
+        }
+      }
+    }
+
+    &.teaser-1-3 {
+    }
+
+    // Cinemagraph
+    .iframe-holder {
+      .maintain-ratio(16, 9);
+
+      iframe {
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    &.teaser-1-3 .iframe-holder {
+      .maintain-ratio(4, 3);
+    }
+  }
+
+  &.no-margin {
+    margin-bottom: 0;
+
+    .bg-color-wrapper {
+      padding: @s1/2 0 @s4;
+    }
+  }
+}
+

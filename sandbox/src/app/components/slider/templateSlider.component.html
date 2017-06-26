@@ -1,0 +1,78 @@
+<div *ngIf="showHeadline" class="theme-headline">
+  <p *ngIf="element.headlineHtml" [innerHTML]="element.headlineHtml"></p>
+  <p *ngIf="element.headline">{{element.headline}}</p>
+</div>
+<div *ngIf="readyForRendering" class="sliderContent" (window:resize)="onResize($event)">
+  <div class="page-slider">
+
+    <div class="innerVertical" *ngIf="loop && vertical">
+      <div class="slider__itemsVertical three-grid">
+        <div *ngFor="let data of loopList" class="slider__itemVertical" [ngClass]="getTransition()"
+             [style.transform]="translatePagesLoopVertical()">
+          <include-components [elements]="data"></include-components>
+        </div>
+      </div>
+    </div>
+
+    <div class="inner" *ngIf="loop &&  !vertical">
+      <div class="slider__items" [ngClass]="layoutClass()" style="margin: 0">
+        <div *ngFor="let data of loopList" class="slider__item" [ngClass]="getTransition()"
+             [style.transform]="translatePagesLoop()">
+          <include-components [elements]="data"></include-components>
+        </div>
+      </div>
+    </div>
+
+    <div class="inner" *ngIf="!loop &&  !vertical">
+      <div class="slider__items" [ngClass]="layoutClass()">
+        <div *ngFor="let data of list" class="slider__item" [ngClass]="getTransition()"
+             [style.transform]="translatePages()">
+          <include-components *ngIf="!data.element.video" [elements]="data"></include-components>
+
+          <!-- video-teaser -->
+          <div *ngIf="data.element.video">
+            <include-components style="margin-bottom:0" *ucpIsset="data.element.video"
+                                [elements]="data.element.video"></include-components>
+            <div class="image-teaser" style="width:100%"> <!-- TODO Styling of video teaser -->
+              <ng-container *wrapInComponentIfExists="data.element?.link">
+                <figure>
+                  <figcaption>
+                    <div>
+                      <div class="headline" *ngIf="data.element.headlineHtml"
+                           [innerHTML]="data.element.headlineHtml"></div>
+                      <div class="subheadline" *ngIf="data.element.subHeadlineHtml"
+                           [innerHTML]="data.element.subHeadlineHtml"></div>
+                      <div class="text" *ngIf="data.element.text">
+                        <p>{{data.element.text}}</p>
+                      </div>
+                      <p *ngIf="data.element.showTag" class="target">#e</p>
+                    </div>
+                  </figcaption>
+                </figure>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="showNavigation">
+      <div class="buttons">
+
+        <div class="dot-indicator">
+          <a *ngFor="let item of items; let i = index" class="dot" (click)="toggleDotClick(i)"
+             [class.active]="item.active"></a>
+        </div>
+
+        <div class="arrowLink">
+          <a class="back" [class.disabled]="backDisabled" (click)="togglePrev()"></a>
+        </div>
+
+        <div class="arrowLink">
+          <a class="for" [class.disabled]="forDisabled" (click)="toggleNext()"></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

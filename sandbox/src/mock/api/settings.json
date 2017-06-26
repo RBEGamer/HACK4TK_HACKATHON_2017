@@ -1,0 +1,227 @@
+{
+  "body": {
+    "_id": "languages_de",
+    "fs_date": 1494573241742,
+    "languages": [
+      {
+        "name": "Deutsch",
+        "abbreviation": "de"
+      },
+      {
+        "name": "English",
+        "abbreviation": "en"
+      }
+    ],
+    "footer": {
+      "className": "footer",
+      "key": "00_02",
+      "element": {
+        "youtube": [
+          {
+            "className": "link-external-no-text",
+            "element": {
+              "nofollow": true,
+              "link": "https://www.youtube.com/user/tkencasadeutschland",
+              "type": "external",
+              "target": "_blank"
+            }
+          }
+        ],
+        "youtubeNumber": "",
+        "xingLink": "http://",
+        "linkListLeftBlock": [
+          {
+            "className": "link-external",
+            "element": {
+              "nofollow": true,
+              "link": "https://www.tk-encasa.de/treppenlift/kurvige-treppen/",
+              "text": " Treppenlift für kurvige Treppen",
+              "type": "external",
+              "target": "_blank"
+            }
+          },
+          {
+            "className": "link-internal",
+            "element": {
+              "nofollow": true,
+              "link": "../content/12_02_media_library",
+              "text": "Treppenlift für gerade Treppen",
+              "type": "internal",
+              "newLink": "/UCPTemplatemaster/content/12_02_media_library_de",
+              "target": ""
+            }
+          }
+        ],
+        "imprint": {},
+        "headlineCorporate": "Überschrift ThyssenKrupp AG",
+        "linkedin": [
+          {}
+        ],
+        "xingNumber": "",
+        "legals": {},
+        "linkedinNumber": "",
+        "twitter": [
+          {}
+        ],
+        "linkedinLink": "http://",
+        "gplusLink": "http://",
+        "subheadlineSocial": "Corporate Website",
+        "share": "Teilen",
+        "youtubeLink": "http://",
+        "headlineSocial": "thyssenkrupp",
+        "gplus": [
+          {
+            "className": "link-external-no-text",
+            "element": {
+              "nofollow": true,
+              "link": "https://plus.google.com/+TKEncasaDeutschland",
+              "type": "external",
+              "target": "_blank"
+            }
+          }
+        ],
+        "facebook": [
+          {
+            "className": "link-external-no-text",
+            "element": {
+              "nofollow": true,
+              "link": "https://www.facebook.com/thyssenkrupp.encasa.de",
+              "type": "external",
+              "target": "_blank"
+            }
+          }
+        ],
+        "engineered ": [
+          {}
+        ],
+        "facebookLink": "https://www.facebook.com/thyssenkrupp.encasa.de",
+        "gplusNumber": "",
+        "linkListRightBlock": [
+          {
+            "className": "link-external",
+            "element": {
+              "nofollow": true,
+              "link": "http://www.treppenliftberater.de/",
+              "text": "Treppenlift Online Berater",
+              "type": "external",
+              "target": "_blank"
+            }
+          }
+        ],
+        "corporate": [
+          {
+            "className": "link-external",
+            "element": {
+              "nofollow": true,
+              "link": "http://www.thyssenkrupp.com/",
+              "text": "corporate webpage",
+              "type": "external",
+              "target": "_blank"
+            }
+          }
+        ],
+        "twitterText": "Besuchen Sie die Seite von",
+        "twitterLink": "http://",
+        "twitterNumber": "",
+        "linkListCenterBlock": [
+          {
+            "className": "link-external",
+            "element": {
+              "nofollow": true,
+              "link": "https://www.tk-encasa.de/treppenlift/preise/",
+              "text": "Treppenlift Preise",
+              "type": "external",
+              "target": "_blank"
+            }
+          }
+        ],
+        "facebookNumber": ""
+      }
+    },
+    "fs_project_id": 857078,
+    "fs_revision_id": 28843,
+    "project-configuration": {
+      "logoSmall": "/assets/img/content/Bagger.png",
+      "zoomMobile": "Der Text ist zu klein? Nutzen Sie die Zoomfunktion Ihres Touchgerätes.",
+      "appleTouchIcon152x152": "/assets/img/content/apple_touch_icon_152x152_0x0_de",
+      "linkList": [
+        {
+          "className": "link-internal",
+          "element": {
+            "nofollow": true,
+            "link": "../content/presstail",
+            "text": "Presse",
+            "type": "internal",
+            "newLink": "/UCPTemplatemaster/content/press_detail_de",
+            "target": ""
+          }
+        },
+        {
+          "className": "link-external",
+          "element": {
+            "nofollow": true,
+            "link": "https://www.tk-encasa.de/ueber-uns/",
+            "text": "Über uns",
+            "type": "external",
+            "target": "_blank"
+          }
+        },
+        {
+          "className": "link-external",
+          "element": {
+            "nofollow": true,
+            "link": "https://www.tk-encasa.de/partner/",
+            "text": "Partner",
+            "type": "external",
+            "target": "_blank"
+          }
+        },
+        {
+          "className": "link-external",
+          "element": {
+            "nofollow": true,
+            "link": "https://www.tk-encasa.de/faq/",
+            "text": "FAQ",
+            "type": "external",
+            "target": "_blank"
+          }
+        }
+      ],
+      "appleTouchIcon120x120": "",
+      "zoomCombination": "STRG und +",
+      "enlargeFont": "größere Schriftgröße",
+      "encreaseContrast": "hoher Kontrast",
+      "claim": "engineering. tomorrow. together.",
+      "logo": "/assets/img/content/apple_touch_icon_114x114_0x0_de",
+      "informationAccessibility": "",
+      "logoHighres": "/assets/img/content/apple_touch_icon_180x180_0x0_de",
+      "brand": "hack4tk",
+      "toTopLabel": "nach oben",
+      "zoomDesktop": "Der Text ist zu klein? Nutzen Sie die Zoomfunktion Ihres Browsers.",
+      "more": " ",
+      "staffOfficeJsonUrl": "",
+      "appleTouchIcon76x76": "/assets/img/content/apple_touch_icon_76x76_0x0_de",
+      "zoom": "Tastenkombination:",
+      "msTouchIcon": "",
+      "roofLine": "",
+      "logoSmallHighres": "",
+      "twtSeoCharacterReplacing": "",
+      "showFontOption": false,
+      "closeText": "",
+      "navigationTeaserList": [],
+      "appleTouchIcon": "/assets/img/content/apple_touch_icon_144x144_0x0_de"
+    },
+    "fs_reference_name": "pageref:languages",
+    "fs_object_type": "config",
+    "startpage": "mock-content/startpage",
+    "fs_uid_type": "SITESTORE_LEAF",
+    "fs_scheduler_date": 1494573238808,
+    "tk_type": "language_configuration",
+    "masterLanguage": "de",
+    "fs_id": "languages_de",
+    "fs_language": "DE",
+    "_etag": {
+      "$oid": "591560ba9f7ebd0012a04b97"
+    }
+  }
+}

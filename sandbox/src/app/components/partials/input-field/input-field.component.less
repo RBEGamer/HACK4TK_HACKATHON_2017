@@ -1,0 +1,305 @@
+@import (reference) "../../_includes";
+
+/* input-field */
+#main .input-field {
+  .clearfix();
+  p {
+    .t5();
+  }
+  form .row {
+    .clearfix();
+    margin-bottom: @s4;
+    position: relative;
+    width: 100%;
+
+    &.inline {
+      input {
+        display: none;
+      }
+    }
+
+    .right {
+      margin-bottom: -2px;
+
+    }
+    .rightCheck {
+      .clearfix();
+      float: left;
+      width: 15%;
+    }
+  }
+
+  .extras label {
+    float: left;
+    margin: 0 @s5 @s5 0;
+    width: auto;
+  }
+  label {
+    display: block;
+    .t5();
+  }
+  label {
+    color: @black;
+    .t5();
+    margin-right: 1%;
+
+    @media @toMobile {
+      display: block;
+      float: none;
+      margin-bottom: @s5 - 5px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .req {
+      color: @darkGray;
+    }
+  }
+  .single {
+    display: block;
+    .t5();
+  }
+  .right {
+    .clearfix();
+    float: left;
+
+    label {
+      float: left;
+      margin: 0 @s5 @s5 0;
+      width: auto;
+
+      @media @toSoftTablet {
+        margin-right: 5px;
+      }
+    }
+
+    .single {
+      max-width: 100%;
+      margin-bottom: @s4 - 5px;
+    }
+
+    @media @toMobile {
+      float: none;
+      width: auto;
+    }
+
+    button {
+      clear: none;
+      float: left;
+      width: 49%;
+      height: 44px;
+
+      &:first-child {
+        margin-right: 2%;
+      }
+
+      @media @toSoftTablet {
+        float: none;
+        width: 100%;
+        &:first-child {
+          margin-bottom: @s5;
+        }
+      }
+    }
+  }
+
+  input,
+  textarea {
+    background-color: @white;
+    .border-radius(0);
+    .box-sizing(border-box);
+    .t5();
+    padding: 8px @s5;
+
+    &:focus {
+      border: 1px solid @darkBlue;
+    }
+
+    @media @toMobile {
+      display: block;
+      float: none;
+      width: 100%;
+    }
+
+    &:focus {
+      border: 1px solid @darkBlue;
+    }
+  }
+
+  button {
+    &.right {
+      float: right;
+      width: auto;
+    }
+  }
+
+  .options {
+  }
+  .select {
+  }
+  &.ui-state-active {
+    background-color: transparent;
+    border: 1px solid @lighterGray;
+    border-bottom: 0 none;
+    margin-bottom: 0;
+    padding: (@s5 - 2) @s5 0;
+
+    .icon-tk-arrow-up2 {
+      &:before {
+        content: "\e901";
+        .em(19, 18);
+        float: right;
+        margin-left: @s8;
+        margin-top: @s9;
+      }
+    }
+  }
+}
+
+.error-txt,
+.mandatory {
+  margin-bottom: 0;
+  text-align: left;
+  width: 70%;
+  color: @signalRed;
+
+  @media @toMobile {
+    display: block;
+    float: none;
+    width: auto;
+  }
+
+  p {
+    .t6();
+    margin-top: @s7;
+    margin-bottom: 0;
+    color: @signalRed;
+  }
+}
+
+.mandatory p {
+  .t6();
+  color: @signalRed;
+}
+
+label {
+  color: @black;
+}
+
+
+#main .input-field--select,
+#bottom .input-field--select {
+  position: relative;
+
+  input.select {
+    display: block;
+    border: none;
+    margin: 0;
+    z-index: 1;
+    width: 100%;
+    float: left;
+    padding: 0;
+    padding-right: ;
+    color: @electricBlue;
+    cursor: pointer;
+    background-color: transparent;
+
+    //position: absolute;
+    //top: 1px;
+    //left: 1px;
+
+    &:hover {
+      border: none;
+    }
+    &:focus {
+      border: none;
+    }
+  }
+
+
+  .selectOptions {
+    .clearfix();
+    list-style: none;
+    margin-top: 0;
+    box-sizing: border-box;
+    display: block;
+    cursor: pointer;
+    color: @electricBlue;
+
+    padding-top: (@s6 - 2px);
+    padding-right: @s3;
+    padding-left: @s5;
+    line-height: 1.625em;
+    overflow: visible;
+    position: relative;
+
+    border: 1px solid @lightGray;
+    padding-bottom: (@s6 - 2px);
+    background-color: @white;
+
+    &:focus {
+      border: 1px solid @darkBlue;
+    }
+  }
+
+  .dropdown {
+    .icon-font();
+
+    &:hover,
+    &:active,
+    &:focus {
+
+    }
+    &.disabled {
+      color: @lightGray;
+      cursor: default;
+    }
+  }
+
+  .dropdownArrow {
+    .icon-font();
+    .icon-tk-arrow-down();
+    cursor: pointer;
+    z-index: 5;
+
+    &:before {
+      position: absolute;
+      font-size: 22px;
+      z-index: 5;
+      right: @s5;
+      top: 50%;
+      margin-top: -11px;
+    }
+  }
+
+  .options {
+    position: absolute;
+    overflow: visible;
+    list-style: none;
+    box-sizing: border-box;
+    left: 1px;
+    right: 1px;
+    padding: 0;
+    margin-top: 0;
+    margin-top: -1px;
+    border: 1px solid @lightGray;
+
+    z-index: 7;
+
+    background-color: @white;
+    cursor: pointer;
+    color: @electricBlue;
+
+
+    li {
+      padding: @s7 @s5;
+      margin: 0;
+      line-height: 1.9375;
+
+      &:hover {
+        background-color: @lightGray;
+        border-color: @lightGray;
+      }
+    }
+  }
+}

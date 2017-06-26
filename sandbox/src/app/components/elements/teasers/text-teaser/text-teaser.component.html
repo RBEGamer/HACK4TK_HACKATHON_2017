@@ -1,0 +1,6 @@
+<div id="{{element.sectionId}}" class="text-teaser" [ngClass]="element.icon ? element.icon : ''">
+  <div *ngIf="element.categoryHtml" class="category" [innerHtml]="element.categoryHtml"></div>
+  <div *ngIf="element.headlineHtml" class="headline" [innerHtml]="element.headlineHtml"></div>
+  <div *ngIf="element.textHtml" [innerHtml]="element.textHtml"></div>
+  <include-components *ucpIsset="element.link" [elements]="element.link" [ngClass]="linkClass()"></include-components>
+</div>

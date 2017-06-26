@@ -1,0 +1,31 @@
+<!-- 06.13 Gallery Slider
+-->
+
+<div class="gallery-slider">
+  <div *ngIf="element.headlineHtml" [innerHtml]="element.headlineHtml"></div>
+
+  <div class="slider-wrapper">
+    <div class="main-slider-wrapper">
+      <div class="main-slider">
+        <ucp-slider #gallerySlider *ngIf="element" [loop]="true" [vertical]="false"
+                    [list]="element.slideshowList" [design]="1"
+                    [showNavigation]="false" [showHeadline]="false" [element]="element"></ucp-slider>
+      </div>
+      <div class="slider-controls">
+      </div>
+    </div>
+
+    <div class="nav-slider-wrapper">
+      <div class="nav-slider">
+        <ucp-slider #galleryNavSlider *ngIf="element" [loop]="true" [vertical]="true"
+                    [list]="element.slideshowList" [design]="3"
+                    [showNavigation]="false" [showHeadline]="false" [element]="element"></ucp-slider>
+      </div>
+      <div class="slider-controls">
+        <a class="slider-control prev" (click)="togglePrev()"></a>
+        <a class="slider-control next" (click)="toggleNext()"></a>
+      </div>
+
+    </div>
+  </div>
+</div>

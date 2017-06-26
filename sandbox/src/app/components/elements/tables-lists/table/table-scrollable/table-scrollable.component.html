@@ -1,0 +1,10 @@
+<div class="scrollable-content" [ngClass]="{'grabbed': isMousePressed, 'ungrabbed': !isMousePressed}">
+  <table (mousedown)="onMousedown($event)" (mouseup)="onMouseup($event)" (mousemove)="onMousemove($event)">
+    <thead *ngIf="element.header">
+    <ucp-subtable [element]="element.header"></ucp-subtable>
+    </thead>
+    <tbody *ngIf="element.body">
+    <ucp-subtable [element]="element.body"></ucp-subtable>
+    </tbody>
+  </table>
+</div>

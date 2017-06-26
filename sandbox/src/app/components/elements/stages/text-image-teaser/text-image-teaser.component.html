@@ -1,0 +1,5 @@
+<h4 *ngIf="element.headlineHtml" class="headline" [innerHTML]="element.headlineHtml"></h4>
+
+<div class="teaser-wrapper no-margin">
+  <include-components [elements]="element.teaserList"></include-components>
+</div>

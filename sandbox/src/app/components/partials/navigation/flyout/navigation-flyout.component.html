@@ -1,0 +1,34 @@
+<div class="navigation-flyout" @unfold *ngIf="subNavigation?.childNodes">
+  <div class="layer-wrapper">
+    <div class="navigation-flyout-column content-left">
+      <p class="headline" *ngIf="subNavigation.editorialContent?.headlineFlyout">
+        {{subNavigation.editorialContent.headlineFlyout}}
+      </p>
+      <p *ngIf="subNavigation.editorialContent?.headlineFlyout">
+        {{subNavigation.editorialContent.teaserFlyout}}
+      </p>
+      <include-components *ngIf="subNavigation.editorialContent?.linkFlyout"
+                          [elements]="subNavigation.editorialContent.linkFlyout"
+                          class="button-blue"></include-components>
+    </div>
+    <div class="navigation-flyout-column navigation-list">
+      <input (keyup)="onChange()" class="deepNavigationSearchField" [(ngModel)]="query"/>
+      <ul>
+        <li *ngFor="let item of filterItems" [ngClass]="{'deeper-navi': item.childNodes?.length}">
+          <a [routerLink]="routerService.getRouteForContentId(item._id)"
+             routerLinkActive="active">
+            <div>
+              <span>{{item.title}}</span>
+              <span class="marketing">{{item._id}}</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="navigation-flyout-column content-right">
+      <img *ngIf="subNavigation.editorialContent?.image" [assetPath]="subNavigation.editorialContent.image.source"
+           alt="{{subNavigation.editorialContent.image.altText}}"
+           title="{{subNavigation.editorialContent.image.title}}">
+    </div>
+  </div>
+</div>

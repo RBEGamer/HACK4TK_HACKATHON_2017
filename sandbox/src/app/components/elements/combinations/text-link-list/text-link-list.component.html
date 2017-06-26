@@ -1,0 +1,20 @@
+<!-- 06.05 Linklist-Text -->
+<div class="text-linklist">
+
+  <div class="paragraph">
+    <p *ngIf="element.headlineHtml" class="headline" [innerHTML]="element.headlineHtml"></p>
+    <div *ngIf="element.bodyHtml" [innerHTML]="element.bodyHtml"></div>
+  </div>
+  <div class="linklist">
+    <p *ngIf="element.headlineLinklist" class="headline">{{element.headlineLinklist}}</p>
+
+    <p *ngIf="element.text" class="text">
+      {{element.text}}
+    </p>
+    <ul *ngIf="element.linkList">
+      <li *ngFor="let link of element.linkList">
+        <include-components class="link" [elements]="link"></include-components>
+      </li>
+    </ul>
+  </div>
+</div>

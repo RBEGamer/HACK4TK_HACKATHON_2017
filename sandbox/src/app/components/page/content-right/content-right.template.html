@@ -1,0 +1,27 @@
+<!-- Standard Template Content+Right Column -->
+<ucp-header-standard></ucp-header-standard>
+<main>
+  <!--
+       Do not enter a line break within the #stage template in this file,
+       we need to make use of the :empty CSS selector, which would
+       no longer work.
+   -->
+  <div id="stage" class="stage buehne"><ng-container #includeStageArea></ng-container></div>
+  <ucp-breadcrumb></ucp-breadcrumb>
+  <div id="main" class="main">
+    <div id="content" class="main__content">
+      <h1 *ngIf="page.pageTitle" [innerHTML]="page.pageTitle"></h1>
+      <ng-container #includeContentArea></ng-container>
+    </div>
+    <div id="sidebar" class="main__sidebar">
+      <ng-container #includeRightArea></ng-container>
+    </div>
+  </div>
+  <div id="bottom" class="bottom">
+    <ng-container #includeBottomArea></ng-container>
+  </div>
+</main>
+<footer>
+  <ucp-scroll-to-top></ucp-scroll-to-top>
+  <ucp-footer-standard></ucp-footer-standard>
+</footer>

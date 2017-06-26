@@ -1,0 +1,118 @@
+@import (reference) "../../../_includes";
+
+/* 15_03 Text-/Image-Boxes Landing Page */
+.text-image-boxes /deep/ {
+  margin-bottom: @s2;
+
+  margin-left: -5px;
+  margin-right: -5px;
+
+  text-align: center;
+
+  .box {
+    .clearfix();
+    width: 33.33%;
+    display: inline-block;
+    margin-left: 0;
+    padding: 0 5px; // grid
+    text-align: left;
+    vertical-align: top;
+    box-sizing: border-box;
+
+    @media @toDesktopWide {
+      margin-bottom: @s4;
+    }
+
+    @media @toTablet {
+      width: auto;
+      padding: 0;
+      display: block;
+    }
+
+    @media @toMobile {
+      margin-bottom: @s3;
+      display: block;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .box-image {
+    @media screen and (max-width: @maxTablet) {
+      width: 40%;
+      display: block;
+      float: left;
+    }
+
+    @media @toMobile {
+      width: auto;
+      float: none;
+    }
+  }
+
+  .text-area {
+    @media screen and (max-width: @maxTablet) {
+      margin-left: 42%;
+    }
+
+    @media @toMobile {
+      margin-left: 0;
+    }
+  }
+
+  .headline {
+    .t4();
+    color: @black;
+    margin-top: @s6;
+
+    @media @toTablet {
+      margin-top: 0;
+    }
+
+    @media @toMobile {
+      margin-top: @s5;
+    }
+  }
+
+  .text {
+    .t5();
+    color: @darkGray;
+    margin-top: @s5;
+    margin-bottom: 0;
+
+    @media screen and (max-width: @maxTablet) {
+      margin-top: @s6;
+    }
+
+    @media @toMobile {
+      margin-top: @s5;
+    }
+  }
+
+  /deep/ .cta-button {
+    text-decoration: none;
+    color: @white;
+    padding: @s6 @s5;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: @s3;
+    width: 200px;
+    background-color: @electricBlue;
+    display: block;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: @darkBlue;
+    }
+
+    @media @toMobile {
+      width: 100%;
+    }
+
+    a {
+      color: @white;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+<div class="video" [ngClass]="element.type">
+  <p class="headline" *ngIf="element.headlineHtml" [innerHTML]="element.headlineHtml"></p>
+
+  <ng-container *ngIf="element.type != 'flixel'; else FLIXEL">
+    <a (click)="playVideo()" class="preview icon-tk-play">
+      <img *ngIf="element.image?.source" class="preview" [assetPath]="element.image.source"
+           alt="{{element.image?.altText}}"
+           title="{{element.image?.title}}"/>
+    </a>
+    <iframe *ngIf="videoVisible"
+            [src]="current_url"
+            frameborder="0"
+            allowfullscreen="">
+    </iframe>
+  </ng-container>
+
+  <ng-template #FLIXEL>
+    <div *ngIf="element.videoId" class="flixel-wrapper">
+      <iframe [src]="current_url"
+              frameborder="0"
+              allowfullscreen=""></iframe>
+    </div>
+    <img *ngIf="!element.videoId && element.image?.source" class="preview" [assetPath]="element.image.source"
+         alt="{{element.image?.altText}}"
+         title="{{element.image?.title}}"/>
+  </ng-template>
+
+  <p class="caption" *ngIf="element.caption">{{element.caption}}</p>
+
+</div>
+

@@ -1,0 +1,34 @@
+<!-- Press- and Mediacenter-Filter -->
+<div class="filter media-library">
+  <p *ngIf="element.headlineHtml" class="headline" [innerHTML]="element.headlineHtml"></p>
+
+  <form [formGroup]="myForm" (ngSubmit)="onSearch()" class="form filter__form">
+    <div class="selects">
+      <div *ngFor="let filterField of element.filterFieldList" class="row">
+        <ucp-input-field [field]="filterField" [parentForm]="myForm"></ucp-input-field>
+      </div>
+    </div>
+
+    <div class="search">
+      <div>
+        <ucp-input-field *ngIf="element.searchInputField" [field]="element.searchInputField"
+                         [parentForm]="myForm" ngClass="search__input"></ucp-input-field>
+      </div>
+      <div class="search__submit">
+        <button *ngIf="element.buttonText" class="button arrow-icon_more icon-tk-arrow" type="button">{{element.buttonText}}
+      </button>
+      </div>
+
+      <!-- TODO: trigger reset of both forms -->
+      <a href="#" class="reset more">Reset</a>
+    </div>
+  </form>
+
+  <div class="image-gallery">
+    <include-components [elements]="teaserList"></include-components>
+  </div>
+
+  <div class="border" *ngIf="element.loadMore">
+    <button (click)="loadMore()" class="load-more" type="button">{{element.loadMore}}</button>
+  </div>
+</div>

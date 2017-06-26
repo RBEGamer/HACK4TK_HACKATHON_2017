@@ -1,0 +1,24 @@
+<!-- 06.02 Image+Text -->
+<div class="text-image" [class.image-left]="element.imagePosition == 'left'">
+
+  <h2 *ngIf="element.headlineHtml" class="headline" [innerHtml]="element.headlineHtml"></h2>
+  <div class="image">
+    <figure>
+      <a *ngIf="element.image" [href]="element.image.source">
+        <img *ngIf="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+             title="{{element.image.title}}"/>
+      </a>
+      <figcaption *ngIf="element.imagecaption" class="figcaption"
+                  [innerHtml]="element.imagecaption"></figcaption>
+    </figure>
+  </div>
+  <div class="paragraph">
+    <div *ngIf="element.bodyHtml" [innerHtml]="element.bodyHtml"></div>
+    <div *ucpIsset="element.link" class="more" [class.image-left]="element.imagePosition == 'left'">
+      <include-components *ucpIsset="element.link" [elements]="element.link"></include-components>
+    </div>
+  </div>
+</div>
+
+
+

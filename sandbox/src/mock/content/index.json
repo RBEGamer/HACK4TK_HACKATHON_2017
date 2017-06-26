@@ -1,0 +1,103 @@
+{
+  "id": "mock-content/startpage",
+  "pageTemplate": "content-right",
+  "title": "hack4tk Startpage!",
+  "elements": {
+    "content": [
+      {
+        "className": "page-headline",
+        "element": {
+          "headline": "Welcome to the 2nd hack4tk at thyssenkrupp HQ in Essen!"
+        }
+      },
+      {
+        "className": "standard-text",
+        "element": {
+          "dark": true,
+          "bodyHtml": "<p><b>You managed to set up your environment.</b></p><p>This is the first important step to rock the house here at hack4tk.</p>"
+        }
+      },
+      {
+        "className": "text-link-list",
+        "element": {
+          "headlineHtml": "Let's get started!",
+          "bodyHtml": "<p>This project has been set up so you can get started right away. The documentation in GitLab will help you with that. As a quick start, the mocked content has a few insights right here, how certain things are done.</p>",
+          "headlineLinklist": "Development",
+          "text": "",
+          "linkList": [
+            {
+              "className": "link-internal",
+              "element": {
+                "link": "mock-content/components-navigation-content",
+                "text": "Components, Navigation and Content",
+                "follow": "true",
+                "target": "_self"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "className": "text-teaser-list",
+        "element": {
+          "headlineHtml": "Non-Development",
+          "backgroundStyleClass": "",
+          "gridStyleClass": "",
+          "textTeaserList": [
+            {
+              "className": "text-teaser",
+              "key": "01_04",
+              "element": {
+                "sectionId": "a123456",
+                "headlineHtml": "<p>Food</p>",
+                "textHtml": "<p>There is enough food and drinks for everyone. Just help yourself in the kitchen</p>",
+                "icon": "compass"
+              }
+            },
+            {
+              "className": "text-teaser",
+              "key": "01_04",
+              "element": {
+                "sectionId": "a123456",
+                "headlineHtml": "<p>Technical Issues</p>",
+                "textHtml": "<p>If you experience technical issues or forgot a import part of your equipment (keyboard, cables, ...) we might be able to help you. Just let us know.</p>",
+                "icon": "community"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "right": [
+      {
+        "className": "countdown-teaser",
+        "element": {
+          "link": [
+            {
+              "className": "link-internal",
+              "element": {
+                "link": "mock-content/startpage",
+                "text": "Home",
+                "follow": "true",
+                "target": "_self"
+              }
+            }
+          ],
+          "image": {
+            "source": "/assets/img/content/tk_default_og_image_0x0_de.jpg",
+            "altText": "Hurry, time is running out",
+            "title": "Hurry, time is running out"
+          },
+          "headlineHtml": "Tick Tock",
+          "subheadlineHtml": "",
+          "textHtml": "",
+          "date": "2017-06-27T10:00:00.000Z",
+          "interval": 60,
+          "globalDays": "Tage",
+          "globalHours": "Stunden",
+          "globalMinutes": "Minuten"
+        }
+      }
+    ]
+  }
+}

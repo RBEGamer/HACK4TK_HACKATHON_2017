@@ -1,0 +1,25 @@
+<!-- 04_01 Download Teaser-->
+<div class="downloadlist">
+  <p class="headline" *ngIf="element.headlineHtml" [innerHtml]="element.headlineHtml"></p>
+
+  <div class="summary">
+    <figure *ngIf="element.image">
+      <img class="thumbnail" *ngIf="element.image" [assetPath]="element.image.source" title="{{element.image?.title}}"
+           alt="{{element.image?.altText}}"/>
+    </figure>
+
+
+    <p class="title" *ngIf="element.documentTitleHtml" [innerHtml]="element.documentTitleHtml"></p>
+
+    <p *ngIf="element.documentTextHtml" [innerHtml]="element.documentTextHtml"></p>
+  </div>
+  <ul>
+    <li *ngFor="let download of element.downloadList">
+      <p class="title">
+        <include-components [elements]="download"></include-components>
+      </p>
+      <p class="info">{{download.element.type}} | {{download.element.fileSize}}</p>
+
+    </li>
+  </ul>
+</div>

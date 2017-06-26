@@ -1,0 +1,528 @@
+/* 14.05 CTA-Kit: General Contact */
+@import (reference) "../../../_includes";
+
+/* 3.2 CTA-Kit: Test Drive */
+.cta-kit-test-drive {
+
+  .two-col-version {
+    // mixin. reused several times, see below
+    position: relative;
+
+    .blue-highlight {
+      @localBoxShadow: @s5 0 0 @electricBlue, -@s5 0 0 @electricBlue;
+      .box-shadow(@localBoxShadow); // for padding on left and right side
+      border-radius: 1px; // iphone 6s fix
+      background-color: @electricBlue;
+      box-decoration-break: clone; // Fix for Firefox, so the background/highlight on the padding aligns all the way to the left
+      color: @white;
+      display: inline;
+      margin: 0;
+    }
+
+    .pane {
+      margin-top: 0;
+    }
+
+    .header-area {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 50%;
+      box-sizing: border-box;
+      padding: 0;
+
+      figure {
+        height: 100%;
+      }
+
+      img {
+        height: 100%;
+        margin-left: -150%;
+        margin-right: -150%;
+        max-width: inherit;
+        display: inline;
+      }
+
+      .header-text {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: @s4;
+        text-align: left;
+
+        .call-us-line, .phone-group, .free-consulting-line {
+          @localBoxShadow: @s5 0 0 @electricBlue, -@s5 0 0 @electricBlue;
+          .box-shadow(@localBoxShadow); // for padding on left and right side
+          background-color: @electricBlue;
+          box-decoration-break: clone; // Fix for Firefox, so the background/highlight on the padding aligns all the way to the left
+          color: @white;
+          margin: 0;
+          padding-left: 10px;
+          float: left;
+          clear: both;
+          margin-top: @s7;
+        }
+
+        .phone-group {
+          padding-top: @s8;
+          padding-bottom: @s8;
+          cursor: default; /* goes along with phone not clickable on desktop script in main.js */
+
+          .phone-icon {
+            .icon-font();
+            .icon-tk-telefon();
+
+            &:before {
+              font-size: 30px;
+              line-height: 49px;
+            }
+
+            display: inline-block;
+            margin-top: 0;
+            margin-right: 8px;
+            padding: 0;
+          }
+
+          .phone-number-line {
+            .t3();
+            display: inline-block;
+            margin-top: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .content-area {
+      margin-left: 50%;
+      padding: @s4;
+      background-color: @lightGray;
+      min-height: 350px;
+    }
+
+    .headline {
+      .t4();
+    }
+
+    .form {
+      label {
+        width: auto;
+        float: none;
+      }
+
+      .row {
+        input, select, .js-select {
+          width: 100%;
+        }
+
+        .error-txt {
+          width: 100%;
+        }
+      }
+
+      select {
+        left: 0;
+      }
+
+      .info-txt {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    .button {
+      width: auto;
+      float: none;
+    }
+
+    .pane[data-pane="basic-info"] {
+      .copy {
+        margin-bottom: @s7;
+      }
+    }
+
+    .pane[data-pane="opt-in"] {
+      .row {
+        margin-left: 0;
+      }
+    }
+  }
+  /* two col version end */
+
+  #main & {
+    .baseVertOffset();
+
+    .headline {
+      .t4();
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .step-bar {
+      .t5();
+      color: @black;
+    }
+
+    .step-bar.floated {
+      /* this is also the ie8 version */
+      float: right;
+
+      @media @toMobile {
+        display: none;
+      }
+    }
+
+    .step-bar.block {
+      border-bottom: 1px solid @middleGray;
+      text-align: right;
+      color: @black;
+      margin-bottom: @s6;
+      margin-top: @s5;
+      display: none;
+      float: none;
+
+      @media @toMobile {
+        display: block;
+      }
+    }
+
+    .header-area {
+      background-color: @electricBlue;
+      color: @white;
+      text-align: center;
+      padding: @s5;
+      overflow: hidden;
+
+      .call-us-line {
+        .t5();
+      }
+
+      .phone-icon {
+        .icon-font();
+        .icon-tk-telefon();
+        margin-top: @s4;
+
+        &:before {
+          font-size: 81px;
+        }
+      }
+
+      .phone-number-line {
+        .t4();
+        margin-top: @s6;
+      }
+
+      .free-consulting-line {
+        .t5();
+        margin-top: @s6;
+      }
+
+      img {
+        display: none;
+      }
+    }
+
+    .content-area {
+      background: @lightGray;
+      padding: @s5;
+
+      .pane {
+        margin-top: 0;
+      }
+    }
+
+    .form {
+      label {
+        display: block;
+        float: left;
+        width: 30%;
+        padding-top: 8px;
+
+        @media @toMobile {
+          width: auto;
+          float: none;
+        }
+      }
+
+      .row {
+        clear: both;
+        position: relative;
+
+
+        p {
+          color: @darkGray;
+          margin: 0;
+        }
+
+        p.dark {
+          color: @black;
+        }
+
+        input {
+          width: 70%;
+          .box-sizing(border-box);
+          border: 1px solid @middleGray;
+
+          @media @toMobile {
+            width: 100%;
+          }
+        }
+
+        input[type=checkbox] + span {
+          color: @middleGray;
+        }
+
+        &.error input[type=checkbox] + span {
+          color: @signalRed;
+        }
+
+        .error-txt {
+          width: 70%;
+          float: right;
+
+          @media @toMobile {
+            width: 100%;
+            float: none;
+          }
+        }
+
+      }
+
+      .error-message {
+        .t6();
+        color: @signalRed;
+        margin-bottom: @s6;
+      }
+
+      .info-txt {
+        color: @middleGray;
+        .t6();
+        width: 70%;
+        margin-left: 30%;
+        margin-bottom: @s3;
+
+        @media @toMobile {
+          width: 100%;
+          margin-left: 0;
+        }
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .button {
+      .button-orange;
+      display: block;
+      width: 70%;
+      float: right;
+
+      @media @toMobile {
+        width: 100%;
+        float: none;
+      }
+    }
+
+    .copy {
+      .t5();
+      color: @darkGray;
+      margin: 0;
+    }
+
+    .pane {
+      margin-top: @s4;
+      position: relative;
+
+      .selectbox {
+        .clearfix();
+        overflow: visible;
+
+        ul {
+          position: absolute;
+          right: 0;
+          top: 100%;
+          width: 70%;
+
+          @media screen and (min-width: @minDesktop) {
+            left: 0;
+            right: auto;
+            width: 100%
+          }
+        }
+      }
+    }
+
+    .pane-hidden {
+      display: none;
+    }
+
+    .pane[data-pane="basic-info"] {
+      .copy {
+        margin-top: @s5;
+        margin-bottom: @s4;
+
+        @media @toMobile {
+          margin-bottom: @s7;
+        }
+      }
+
+      .no-js & {
+        display: block;
+
+        .button {
+          display: none;
+        }
+      }
+    }
+
+    .pane[data-pane="opt-in"] {
+      .row {
+        margin-left: 30%;
+        margin-top: @s4;
+
+        @media @toMobile {
+          margin-left: 0;
+        }
+      }
+
+      label {
+        float: none;
+        width: auto;
+        padding: 0;
+      }
+
+      .error-txt {
+        width: 100%;
+      }
+
+      .no-js & {
+        display: block;
+
+        .headline, .copy {
+          display: none;
+        }
+      }
+    }
+
+    .pane[data-pane="final"] {
+      .linklist {
+        margin-top: @s4;
+        margin-bottom: 0;
+      }
+    }
+
+    .phone-group {
+      color: @white;
+      text-decoration: none;
+    }
+  }
+  /* #main &, #full-width end */
+
+  #main #content & {
+    @media screen and (min-width: @minDesktop) {
+      .two-col-version();
+    }
+  }
+  /* #main #content end */
+
+  #main #sidebar & {
+
+    .content-area {
+      background: @lightGray;
+      padding: @s5;
+
+      .pane {
+        margin-top: 0;
+      }
+    }
+
+    .shared {
+      .headline {
+        .t4();
+      }
+
+      .step-bar.floated {
+        display: none;
+      }
+
+      .step-bar.block {
+        border-bottom: 1px solid @middleGray;
+        text-align: right;
+        color: @black;
+        margin-bottom: @s6;
+        margin-top: @s5;
+        display: block;
+        float: none;
+      }
+
+      .form {
+        label {
+          width: auto;
+          float: none;
+        }
+
+        .row {
+          input, select, .js-select, .error-txt {
+            width: 100%;
+          }
+        }
+
+        select {
+          left: 0;
+        }
+
+        .info-txt {
+          width: 100%;
+          margin-left: 0;
+        }
+      }
+
+      .button {
+        width: 100%;
+        float: none;
+      }
+
+      .pane[data-pane="basic-info"] {
+        .copy {
+          margin-bottom: @s7;
+        }
+      }
+
+      .pane[data-pane="opt-in"] {
+        .row {
+          margin-left: 0;
+        }
+      }
+
+    }
+
+    @media screen and (min-width: @maxBigTablet) {
+      /* show the small version only if the sidebar is really on the side */
+      .shared()
+    }
+  }
+
+  /* #main #sidebar end */
+
+
+}
+
+#main .cta-kit-test-drive,
+#bottom .cta-kit-test-drive {
+  .input-field--select {
+    .selectOptions {
+      border-color: @middleGray;
+
+      input.select {
+        border: none;
+      }
+    }
+  }
+}
+
+
+#bottom > ucp-general-contact {
+  @moduleContainer();
+}

@@ -1,0 +1,14 @@
+<div class="item imageteaser-blue wide" [ngClass]="element.styleType">
+  <div>
+    <a href="">
+      <img src="{{element.image}}"/>
+
+      <div class="text" [ngClass]="getAlignment()">
+        <p class="headline">{{element.headline}}</p>
+        <br/>
+
+        <p>{{element.subline}}</p>
+      </div>
+    </a>
+  </div>
+</div>

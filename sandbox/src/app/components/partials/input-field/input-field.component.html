@@ -1,0 +1,48 @@
+<div [formGroup]="parentForm" class="input-field">
+  <label *ngIf="field.label" class="label">{{field.label}}<span *ngIf="isMandatory(field)" class="req">*</span></label>
+
+  <input *ngIf="field.type == 'input'" type="text" name="{{field.name}}" formControlName="{{field.name}}"
+         placeholder="{{field.placeHolder}}"/>
+
+
+  <div class="extras" *ngIf="field.type == 'selectBoolean'" formGroupName="{{field.name}}">
+    <div class="rightCheck" *ngFor="let checkboxItem of field.selectItemList">
+
+      <label> <input type="checkbox" formControlName="{{checkboxItem.value}}"/>
+        <span [innerHTML]="checkboxItem.label"></span>
+      </label>
+    </div>
+  </div>
+
+  <div *ngIf="field.type == 'radio'" class="right">
+    <div class="radio" *ngFor="let radioItem of field.selectItemList">
+      <label>
+        <input type="radio"
+               formControlName="{{field.name}}"
+               [value]="radioItem.value"/>
+        <span>{{radioItem.label}}</span>
+      </label>
+    </div>
+  </div>
+
+  <div *ngIf="field.type == 'select'" class="input-field--select right">
+    <span class="selectOptions dropdown dropdownArrow" (click)="toggleVisibility(field.name, true,$event)">
+      <input id="{{field.name}}" class="select" value="{{getValueLabel(field.name)}}"  formControlName="{{field.name}}" readonly/>
+    </span>
+
+    <ul [hidden]="!isVisible(field.name)" class="options">
+      <li *ngFor="let option of field.selectItemList" (click)="setValue(field.name, option.value)">
+        {{option.label}}
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="!isValid(field)" class="error-txt">
+    <p class="error">{{getErrorMessage(field)}}</p>
+  </div>
+
+
+  <div *ngIf="showMandatory && isMandatory(field)" class="mandatory">
+    <p>{{element.mandatoryField}}</p>
+  </div>
+</div>

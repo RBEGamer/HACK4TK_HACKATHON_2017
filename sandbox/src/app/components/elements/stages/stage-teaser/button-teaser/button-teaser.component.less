@@ -1,0 +1,118 @@
+@import (reference) "../../../../_includes";
+/** 06_16 Stage teaser flexible**/
+
+.button-teaser {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #D9DEE8;
+  padding: 16px;
+  color: #000;
+
+  a, .button-teaser-link {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .button-teaser-image {
+    height: 44%;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-align: left;
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .button-teaser-text {
+    bottom: 16px;
+    left: 16px;
+    position: absolute;
+    right: 16px;
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .headline {
+      font-size: 2.25em;
+      line-height: 1.36111111em;
+      display: block;
+      margin: 0;
+    }
+
+    .button {
+      box-sizing: border-box;
+      background-color: #FFB400;
+      border: 1px solid transparent;
+      margin: 0;
+      padding: 12px 24px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      color: #000;
+      border-radius: 0;
+
+      &:hover, &:focus, &:active {
+        background-color: #003C7D;
+        color: #fff;
+
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 1440px) {
+    .button-teaser-image {
+      height: 30%;
+    }
+  }
+
+
+  @media @toDesktop {
+    .button-teaser-image {
+      height: 25%;
+    }
+
+    .button-teaser-text {
+      .headline {
+        font-size: 1.5em;
+        line-height: 1.375em;
+      }
+    }
+  }
+
+  @media @toTablet {
+    .button-teaser-image {
+      display: none;
+    }
+  }
+
+
+  @media @toMobile {
+    .button-teaser-image {
+      display: block;
+      text-align: center;
+      margin-bottom: 16px;
+      height: auto;
+
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+    }
+
+    .button-teaser-text {
+      position: static;
+    }
+  }
+}

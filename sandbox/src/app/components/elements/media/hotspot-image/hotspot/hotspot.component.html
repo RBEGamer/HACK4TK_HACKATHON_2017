@@ -1,0 +1,25 @@
+<div (hide-hotspot)="hideHotspot()"
+     class="hotspot electricBlue text" [ngClass]="{'active': visible}">
+  <!-- Offest (0 - 100) in percent from the left upper corner of the image/container -->
+  <div class="marker" [ngStyle]="getPositionCoordinates()" (click)="toggle($event)">
+  </div>
+  <div class="wrapper" [ngStyle]="getCardPositionCoordinates()" [@hotspotState]="visible" *ngIf="visible">
+    <div class="headline" *ngIf="element.headline">
+      {{element.headline}}
+    </div>
+    <div class="content">
+      <span class="close" (click)="toggle()"></span>
+      <div class="subheadline" *ngIf="element.subheadline">
+        {{element.subheadline}}
+      </div>
+      <div class="text" *ngIf="element.text" [innerHTML]="element.text">
+
+      </div>
+      <ul class="linklist">
+        <li *ngFor="let link of element.linklist">
+          <include-components [elements]="link"></include-components>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

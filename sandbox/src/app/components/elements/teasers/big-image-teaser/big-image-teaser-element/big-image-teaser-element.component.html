@@ -1,0 +1,17 @@
+<div class="big-image-teasers">
+  <div class="image" [ngClass]="getCropStyle()">
+    <figure>
+      <img *ucpIsset="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+           title="{{element.image.text}}"/>
+    </figure>
+    <div class="text-box">
+      <div *ngIf="element.style" class="image-text bottom" [ngClass]="getAlignStyle() + ' ' + getTextBoxStyle()">
+        <h3 *ngIf="element.headline" [innerHTML]="element.headline"></h3>
+        <p *ngIf="element.copyText" [innerHTML]="element.copyText"></p>
+        <include-components [ngClass]="getStyleShowArrow()" [elements]="element.link"
+                            class="a"></include-components>
+      </div>
+    </div>
+  </div>
+</div>
+

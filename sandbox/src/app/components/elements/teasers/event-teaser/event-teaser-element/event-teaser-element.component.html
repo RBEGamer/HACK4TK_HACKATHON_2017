@@ -1,0 +1,21 @@
+<!-- 01.07 Event Teaser Element (Component from Datasource is Event Element)-->
+<div class="eventelement">
+  <div>
+    <ng-container *wrapInComponentIfExists="element.link">
+      <p class="info">
+        <ng-container *ngIf="element.dateFrom">
+          {{element.dateFrom}}
+        </ng-container>
+        <ng-container *ngIf="element.dateTo">
+          - {{element.dateTo}}
+        </ng-container>
+
+        <ng-container *ngIf="element.place">
+          | {{element.place}}
+        </ng-container>
+
+      </p>
+      <p *ngIf="element.text">{{element.text}}</p>
+    </ng-container>
+  </div>
+</div>

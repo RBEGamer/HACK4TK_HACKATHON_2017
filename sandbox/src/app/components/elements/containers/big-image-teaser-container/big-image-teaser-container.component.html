@@ -1,0 +1,4 @@
+<include-components *ngIf="element.teaserList.length < 2" [elements]="element.teaserList"></include-components>
+<ucp-slider *ngIf="element.teaserList.length > 1" [list]="element.teaserList" [element]="element" [vertical]="false"
+            [design]="1" [loop]="true" [showHeadline]="false"
+            [showNavigation]="true"></ucp-slider>

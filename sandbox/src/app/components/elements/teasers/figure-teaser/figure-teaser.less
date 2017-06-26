@@ -1,0 +1,172 @@
+@import (reference) "../../../_includes";
+
+/* 01.09 Figure Text Teaser */
+#main,
+#bottom {
+  .figureteaser,
+  .numberteaser {
+    margin-bottom: @baseVertOffset;
+
+    @media @toTablet {
+      margin-bottom: @s2;
+    }
+
+    @media @toMobile {
+      margin-bottom: @s3;
+    }
+
+    .headline {
+      .t4();
+      color: @black;
+      font-weight: normal;
+      margin: 0 0 @s5;
+    }
+
+    ul {
+      .clearfix();
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+    li {
+      .clearfix();
+      float: none;
+      list-style: none;
+      margin: 0 0 @s3;
+      position: relative;
+      text-align: left;
+      width: 100%;
+      border-bottom: 10px solid @lighterGray;
+      padding-left: 0;
+
+      &:last-child {
+        border: none;
+      }
+
+      @media @toMobile {
+        margin-bottom: @s3;
+      }
+
+      .number-holder {
+        border-bottom: none;
+        margin: 0;
+      }
+      p {
+        .t5();
+        color: @darkGray;
+        float: left;
+        margin-bottom: @s4;
+        max-width: 70%;
+        position: relative;
+
+        @media @toSoftTablet {
+          float: none;
+          margin-bottom: @s9;
+          max-width: 100%;
+        }
+
+        &.zahl {
+          .em(81, 80);
+          color: @black;
+          float: none;
+          font-weight: normal;
+          margin: 0;
+          max-width: 100%;
+          padding-bottom: @s7;
+
+          @media @toMobile {
+            .em(54, 54);
+            padding-bottom: @s5;
+          }
+        }
+        &.headline {
+          float: none;
+        }
+      }
+
+      .more {
+        .t5();
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        margin-bottom: @s4;
+
+        @media @toSoftTablet {
+          position: inherit;
+
+        }
+      }
+    }
+  }
+  @media screen and (min-width: @minDesktopWide) {
+    .numberteaser.big {
+
+      li {
+        display: inline-table;
+        vertical-align: text-top;
+        text-align: center;
+        width: 32%;
+        border: none;
+
+        .number-holder {
+          display: table;
+          border-bottom: 1px solid @lighterGray;
+          margin: 0 1.1% @s5;
+          width: 100%;
+
+          @media @toDesktop {
+            display: block;
+            width: auto;
+          }
+        }
+
+        p {
+          float: none;
+          margin-bottom: @s8;
+          max-width: 100%;
+          vertical-align: bottom;
+
+          &.zahl {
+            .t3();
+            display: table-cell;
+            margin-bottom: 0px;
+            padding-bottom: @s5;
+
+            @media @toDesktop {
+              display: block;
+              float: none;
+              border-bottom: none;
+              margin: 0;
+            }
+          }
+        }
+
+        .more {
+          float: none;
+          position: inherit;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: @toSoftTablet) {
+    .numberteaser.big {
+      li {
+        p {
+          max-width: 80%;
+        }
+
+        .more {
+          display: block;
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+#stage, #bottom {
+  figure-teaser {
+    @moduleContainer();
+  }
+}

@@ -1,0 +1,19 @@
+<div class="image-teaser">
+  <ng-container *wrapInComponentIfExists="element?.link">
+
+    <figure>
+      <img *ngIf="element.image?.source" [assetPath]="element.image.source" title="{{element.image.title}}"
+           alt="{{element.image.altText}}"/>
+      <figcaption>
+        <div>
+          <div class="headline" *ngIf="element.headlineHtml" [innerHTML]="element.headlineHtml"></div>
+          <div class="subheadline" *ngIf="element.subHeadlineHtml" [innerHTML]="element.subHeadlineHtml"></div>
+          <div class="text" *ngIf="element.text">
+            <p>{{element.text}}</p>
+          </div>
+          <p *ngIf="element.showTag" class="target">#e</p>
+        </div>
+      </figcaption>
+    </figure>
+  </ng-container>
+</div>

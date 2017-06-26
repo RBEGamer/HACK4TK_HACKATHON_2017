@@ -1,0 +1,35 @@
+{
+  "id": "mock-content/event",
+  "mockConent": [
+    {
+      "className": "event-element",
+      "key": "01_07",
+      "element": {
+        "headline": "Dummy Heading",
+        "publishingDate": "2016-11-14T15:19:55",
+        "place": "Dummy Ort",
+        "dateFrom": "2016-11-14T15:20:03",
+        "dateTo": "2016-11-15T15:20:06",
+        "domHtml": "<p>Dummy Text</p>",
+        "addressHtml": "<p>Dummy Test</p>",
+        "link": {
+          "className": "link-download",
+          "element": {
+            "text": "Test media",
+            "target": "_blank",
+            "nofollow": true,
+            "link": "/assets/img/content/135_0x0_de",
+            "type": "JPG",
+            "fileSize": "3 KB"
+          }
+        },
+        "categoryList": [
+          "Dummy Kategorie"
+        ],
+        "topicList": [
+          "Dummy topic"
+        ]
+      }
+    }
+  ]
+}

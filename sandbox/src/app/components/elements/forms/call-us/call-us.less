@@ -1,0 +1,126 @@
+@import (reference) "../../../_includes";
+
+/* 03.04 CTA Call us*/
+
+.cta-call-us {
+  margin: 0 0 @s6;
+  margin-bottom: 81px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 54px;
+  }
+
+  .headline {
+    color: @black;
+    font-weight: normal;
+    .t4();
+    margin: 0 0 @s6;
+  }
+
+  .contact-form-link {
+    .clearfix();
+    display: flex;
+    align-items: center;
+    background-color: @lightGray;
+    padding: @s4 @s5;
+    position: relative;
+    text-decoration: none;
+  }
+
+  p {
+    .t5();
+    color: @darkGray;
+    padding: 0 @s4 0 0;
+    flex-grow: 1;
+    margin-bottom: 0;
+  }
+
+
+  .button {
+    display: block;
+    flex-grow: 1;
+
+    .cta-button {
+      .icon-font();
+      .icon-tk-telefon();
+      .button-orange();
+      width: 100%;
+      box-sizing: border-box;
+
+      a {
+        color: @black;
+        text-decoration: none;
+      }
+      &:hover {
+        a {
+          color: @white;
+        }
+      }
+
+
+      .t4();
+      display: block;
+      padding: (@s8 + 2px) @s5 (@s8 - 2px) (@s5 + @s7 + 31px);
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        font-size: 37px;
+        margin-left: -32px - @s7;
+        margin-right: @s7;
+        position: relative;
+        top: -2px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@c-cta-call-us-multi-column: {
+  .contact-form-link {
+    display: flex;
+  }
+
+  p, .button {
+    flex-grow: 1;
+  }
+
+  p {
+    padding: 0 @s5 0 0;
+    margin-bottom: 0;
+  }
+
+  .button {
+
+  }
+};
+
+@c-cta-call-us-single-column: {
+  .contact-form-link {
+    display: block;
+  }
+
+  p {
+    margin-bottom: @s4;
+  }
+};
+
+#main .cta-call-us {
+  @c-cta-call-us-multi-column();
+
+  @media @toMobile {
+    @c-cta-call-us-single-column();
+  }
+}
+
+#sidebar .cta-call-us {
+  @c-cta-call-us-single-column();
+
+  @media @bigTablet {
+    @c-cta-call-us-multi-column();
+  }
+
+  @media @toMobile {
+    @c-cta-call-us-single-column();
+  }
+}

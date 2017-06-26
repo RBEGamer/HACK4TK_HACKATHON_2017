@@ -1,0 +1,8 @@
+<div class="press-news-teaser">
+  <div *wrapInComponentIfExists="element.link" class="press-news-teaser-link">
+
+    <p class="category" *ngIf="element.topheadlineHtml"
+       [innerHTML]="element.topheadlineHtml"></p>
+    <p *ngIf="element.textHtml" [innerHTML]="element.textHtml"></p>
+  </div>
+</div>

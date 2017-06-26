@@ -1,0 +1,7 @@
+<div class="element-link">
+  <div class="icon-wrapper" (click)="triggerLink()">
+    <img *ngIf="element.image.source" [assetPath]="element.image.source" title="{{element.image.title}}"
+         alt="{{element.image.altText}}"/>
+  </div>
+  <include-components *ucpIsset="element.link" [elements]="element.link"></include-components>
+</div>

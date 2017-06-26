@@ -1,0 +1,18 @@
+<!-- 06_16 hero teaser for stage teaser-->
+<div class="hero-teaser imageteaser-blue {{element.teaserTyp == 'video' ||  element.teaserTyp == 'youtube' ? ' video lightbox ' : ' '}}">
+  <ng-container *wrapInComponentIfExists="element.link">
+    <div class="hero-teaser-image-container" *ucpIsset="element.image">
+      <img class="hero-teaser-image" [assetPath]="element.image.source"
+           alt="{{element.image.altText}}" title="{{element.image.title}}"/>
+      <div class="{{element.textPosition == 1 ? 'text' : 'text align-top'}}">
+        <p class="headline"
+          *ngIf="element.headlineHtml && element.headlineHtml.trim().length > 0"
+          [innerHTML]="element.headlineHtml"></p>
+        <br />
+        <p class="subheadline"
+          *ngIf="element.subheadlineHtml && element.subheadlineHtml.trim().length > 0"
+          [innerHTML]="element.subheadlineHtml"></p>
+      </div>
+    </div>
+  </ng-container>
+</div>

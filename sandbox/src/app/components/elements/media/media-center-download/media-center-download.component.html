@@ -1,0 +1,9 @@
+<!-- Documents Download (old description: 4.4 list media centre documents) | CSS: mediacentre-list.less -->
+<div class="mediacentre-list documents" id="media-center-documents">
+  <p class="headline" *ngIf="element.headlineHtml" [innerHtml]="element.headlineHtml"></p>
+  <ul>
+    <li *ngFor="let document of element.documentList">
+      <include-components [elements]="document"></include-components>
+    </li>
+  </ul>
+</div>

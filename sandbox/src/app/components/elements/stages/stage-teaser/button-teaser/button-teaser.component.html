@@ -1,0 +1,17 @@
+<!-- 06_16 hero teaser for stage teaser-->
+<div class="button-teaser">
+  <div class="button-teaser-image" *ucpIsset="element.image">
+    <img [assetPath]="element.image.source"
+         alt="{{element.image.altText}}" title="{{element.image.title}}"/>
+  </div>
+  <div class="button-teaser-text">
+    <p class="headline" *ngIf="element.headlineHtml" [innerHTML]="element.headlineHtml"></p>
+    <p *ngIf="element.domHtml" [innerHTML]="element.domHtml"></p>
+    <div class="button">
+      <include-components [elements]="element.link"></include-components>
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,34 @@
+@import (reference) "../../../_includes";
+
+/* 15_05 Separator for Landing Pages */
+:host-context(#sidebar) .ekomi-wrapper {
+  .box-sizing(border-box);
+  margin-bottom: @s3;
+
+  :host-context(#eKomiWidget_default) {
+    background-color: @lighterGray;
+    margin: 0 auto;
+    width: 100%; /* Change size of the widget here, */
+    img {
+      width: 300px /* and here too */
+    }
+  }
+
+  &.grey-background {
+    background-color: @lighterGray;
+    padding: @s5;
+
+    @media @bigTablet {
+      text-align: center;
+    }
+
+    :host-context(#eKomiWidget_default) {
+      padding: @s5 @s6;
+    }
+  }
+
+  &.grey-border {
+    border: 2px solid @lighterGray;
+    padding: @s4;
+  }
+}

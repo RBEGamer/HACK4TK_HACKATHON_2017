@@ -1,0 +1,119 @@
+@import (reference) "../../../_includes";
+
+:host {
+  .big.item {
+    width: 100%;
+  }
+
+  .small.item {
+    width: 50%;
+    float: left;
+  }
+
+  .imageteaser-blue {
+
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    .text {
+      color: @white;
+      position: absolute;
+      display: block;
+      margin: 0;
+      padding: 31px @s6 0;
+      left: 15px;
+      bottom: 60px;
+      top: auto;
+
+      &.align-top {
+        top: 30px;
+        bottom: auto;
+      }
+
+      p {
+        .t5;
+        @localBoxShadow: @s5 0 0 @electricBlue, -@s5 0 0 @electricBlue;
+        .box-shadow(@localBoxShadow);
+        background-color: @electricBlue;
+        box-decoration-break: clone;
+        color: @white;
+        display: inline-block;
+        margin-bottom: 0;
+        margin-top: 4px;
+        padding: 3px 0 1px 0;
+
+        @media @toMobile {
+          display: none;
+        }
+
+        &:before {
+          content: "";
+          display: block;
+        }
+
+        &.headline {
+          .em(24, 47);
+          display: inline;
+          margin: 0;
+          padding: 7px 1px 5px;
+
+          &:before {
+            display: none;
+          }
+
+          span {
+            .icon-font(after);
+            .icon-tk-play-b(after);
+            white-space: nowrap;
+
+            &:after {
+              font-size: 30px;
+              margin-left: @s6;
+              position: relative;
+              top: 4px;
+              white-space: nowrap;
+
+              @media @toMobile {
+                font-size: 35px;
+                top: 2px;
+              }
+            }
+          }
+
+          @media @toMobile {
+            .em(36, 60);
+            display: inline;
+          }
+        }
+
+        &.category {
+          .em(12, 27);
+          display: inline;
+          margin-bottom: 1px;
+          margin-top: 0;
+          padding: 4px 1px 3px;
+          position: relative;
+          top: -1px;
+
+          &:before {
+            display: none;
+          }
+        }
+      }
+
+      &.headline {
+        .em(40, 74);
+        margin-bottom: 1px;
+        padding: 10px 1px 12px;
+
+        &:before {
+          display: none;
+        }
+      }
+
+    }
+  }
+}

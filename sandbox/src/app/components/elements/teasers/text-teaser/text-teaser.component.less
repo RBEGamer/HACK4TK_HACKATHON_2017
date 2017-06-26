@@ -1,0 +1,157 @@
+@import (reference) "../../../_includes";
+
+/* 01_04 Text Teaser */
+.text-teaser {
+  background-color: @lighterGray;
+  color: @darkGray;
+  margin-bottom: @baseVertOffset;
+  padding: @s4 @s5;
+  .clearfix();
+
+  @media @toTablet {
+    margin-bottom: @s2;
+  }
+  @media @toMobile {
+    margin-bottom: @s3;
+  }
+
+  &.community,
+  &.microphone,
+  &.compass {
+    .icon-font();
+
+    &:before {
+      color: @electricBlue;
+      display: block;
+      float: right;
+      font-size: 42px;
+      margin-left: @s6;
+    }
+  }
+
+  &.community {
+    .icon-tk-community();
+  }
+
+  &.microphone {
+    .icon-tk-radio();
+  }
+
+  &.compass {
+    .icon-tk-compass();
+  }
+
+  .headline,
+  h3 {
+    .t4();
+    color: @black;
+    font-weight: normal;
+    margin: 0 0 @s6;
+  }
+  p {
+    .t5();
+    margin-bottom: @s7;
+  }
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .category {
+    font-size: 0.75em;
+    line-height: 1.33;
+    margin: 0;
+    margin-bottom: 7px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .more {
+    .t5();
+    display: block;
+    float: left;
+    color: @electricBlue;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+
+    li {
+      margin-bottom: @s5;
+      padding-left: (10 + @s6);
+
+      &:before {
+        content: "\2022";
+        color: @electricBlue;
+        display: inline-block;
+        margin-left: -(10 + @s6);
+        margin-right: @s6;
+        position: relative;
+        width: 10px;
+      }
+    }
+  }
+}
+
+#sidebar .text-teaser {
+  margin-bottom: @s3;
+
+  @media @toTablet {
+    margin-bottom: @s2;
+  }
+
+  @media @toMobile {
+    margin-bottom: @s3;
+  }
+}
+
+.stage-teaser .text-teaser {
+  margin-bottom: 0;
+
+  font-size: 1.125em;
+  line-height: 1.44444444em;
+
+  .headline {
+    font-size: 30px;
+    margin-bottom: 16px;
+    line-height: 1.36111111em;
+
+    p {
+      margin: 0;
+      line-height: 1.36111111em;
+    }
+  }
+
+  a {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    white-space: nowrap;
+    text-indent: 150%;
+
+    &:after {
+      content: none;
+    }
+  }
+
+  .more:after {
+      content: none;
+  }
+
+  @media screen and (min-width: @minTablet) {
+    .headline {
+      font-size: 2.25em;
+      margin-bottom: 12px;
+    }
+  }
+}

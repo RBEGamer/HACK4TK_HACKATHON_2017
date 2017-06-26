@@ -1,0 +1,227 @@
+/* 06.11 Quotation + Image merged */
+@import (reference) "../../../_includes";
+
+:host-context(#main) /deep/ .quotation {
+  .baseVertOffset();
+  .box-sizing(border-box);
+  clear: both;
+  background-color: @white;
+  padding: 0 0 @s6 0;
+  width: 100%;
+
+  > blockquote {
+    margin: 0;
+    padding: 0;
+
+    > div {
+      color: @darkGray;
+      margin: 0;
+      .t5();
+
+      ul {
+        .clearfix();
+        margin: 0 0 0 20px;
+      }
+      li {
+        margin: 0 0 0 0;
+      }
+    }
+
+    cite {
+      color: @darkGray;
+    }
+
+    .quote-big {
+      color: @darkGray;
+    }
+  }
+}
+
+:host /deep/ a {
+  text-decoration: none;
+}
+
+:host-context(#main) /deep/ .quotationteaser {
+  .clearfix();
+  background-color: @white;
+  clear: both;
+
+  &.withImage {
+    padding-bottom: @s4 - 5px;
+    position: relative;
+
+    @media @tabletLP {
+      padding-bottom: @s4 - 12px;
+    }
+
+    figure {
+      .box-sizing(border-box);
+      float: left;
+      margin-right: 2%;
+      margin-top: 2px;
+      width: 25%;
+
+      @media @toMobile {
+        float: none;
+        width: 98%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    blockquote {
+      float: left;
+      width: 67%;
+
+      @media @toTablet {
+        width: 63%;
+      }
+
+      @media @toMobile {
+        float: none;
+        margin-top: @s4;
+        width: auto;
+      }
+    }
+
+    & + blockquote {
+      margin-top: 0;
+    }
+  }
+
+  blockquote {
+    margin: 0;
+    .box-sizing(border-box);
+    @localBoxShadow: @s5 0 0 @electricBlue, -@s5 0 0 @electricBlue;
+
+    //de
+    .de-de & p:before {
+      content: "\201E";
+    }
+    .de-de & p:after {
+      content: "";
+    }
+    .de-de & p:after {
+      content: "\201C";
+    }
+
+    //fr es   TODO Mehrsprachenunterstützung im Template implementieren
+    .fr-fr & p:before, //eventuell p durch div-tag ersetzen (siehe .de-de)
+    .es-es & p:before {
+      content: "\00AB";
+    }
+    .fr-fr & p:after,
+    .es-es & p:after {
+      content: "";
+    }
+    .fr-fr & p:after,
+    .es-es & p:after {
+      content: "\00BB";
+    }
+
+    .lt-ie9 {
+      padding: 0;
+    }
+
+    p {
+
+      .box-shadow(@localBoxShadow); // for padding on left and right side
+      background-color: @electricBlue;
+      color: @white;
+      display: inline;
+      position: relative;
+      left: 16px;
+      box-decoration-break: clone; // Fix for Firefox, so the background/highlight/stripe on the padding aligns all the way to the left.
+      .t4();
+      text-decoration: none;
+      padding: 1px 1px 2px 1px; // So the stripe is 30px high at a font size of 24px.
+      .lt-ie9 & {
+        zoom: 1;
+        filter: progid:DXImageTransform.Microsoft.DropShadow(color='#00a0f0', offX='20', offY='0');
+        -ms-filter: "progid:DXImageTransform.Microsoft.DropShadow(color='#00a0f0',offX='20',offY='0')";
+      }
+
+      //Workaround for Ipad and Iphone
+      /*  .safari &,
+        .chrome-mac & {
+          border-top: 6px solid @electricBlue;
+        } */
+    }
+
+    div {
+
+    }
+  }
+  cite {
+    display: block;
+    font-style: normal;
+    .t5();
+    margin-top: @s6;
+
+  }
+  .position {
+    .t6;
+    color: @middleGray;
+    display: block;
+  }
+
+  .more {
+    display: inline-block;
+    .icon-font(after);
+    .icon-tk-arrow(after);
+    color: #00A0F0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:after {
+      font-size: 12px;
+      margin-left: 4px;
+      margin-top: 0.3em;
+    }
+    &:before {
+      content: "";
+    }
+
+  }
+
+  & + blockquote {
+    margin-top: @s4;
+  }
+}
+
+/* Adaptations for sidebar */
+:host-context(#main) /deep/ :host-context(#stage) {
+
+  .quotation .withImage > figure {
+    width: 100%;
+    margin-bottom: @s4 - 1px;
+
+    @media @bigTablet {
+      float: left;
+      width: 25%;
+    }
+
+    @media @toSoftTablet {
+      float: none;
+      width: 100%;
+    }
+  }
+  .quotation .withImage > blockquote {
+    width: 95%;
+
+    @media @bigTablet {
+      float: left;
+      width: 71%;
+      margin-top: 0;
+    }
+
+    @media @toMobile {
+      float: none;
+      width: auto;
+    }
+  }
+}

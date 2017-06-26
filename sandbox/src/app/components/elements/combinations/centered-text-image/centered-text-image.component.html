@@ -1,0 +1,15 @@
+<div class="centered-text-image">
+  <div class="centered-block">
+    <div *ngIf="element.optionalHeadlineHtml" class="paragraph" [innerHTML]="element.optionalHeadlineHtml">
+    </div>
+    <div *ngIf="element.headlineHtml" class="headline" [innerHTML]="element.headlineHtml">
+    </div>
+
+    <div *ngIf="element.textHtml" class="paragraph" [innerHTML]="element.textHtml">
+    </div>
+
+    <img *ngIf="element.image" [assetPath]="element.image.source" alt="{{element.image.altText}}"
+         title="{{element.image.title}}"/>
+  </div>
+</div>
+

@@ -1,0 +1,57 @@
+@import (reference) "../../../../_includes";
+
+.element-link {
+  .icon-wrapper {
+    padding: 0 (@s3 - 1);
+    position: relative;
+
+    @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+      padding: 0 @s5;
+    }
+
+    @media @toMobile {
+      display: none;
+    }
+
+    img {
+      margin-bottom: @s5;
+      max-width: 100%;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+      img {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+:host-context(#main) .element-link {
+  &:hover /deep/ a {
+    text-decoration: underline;
+  }
+}
+
+:host-context(#main) .element-link /deep/ a {
+  .t5();
+  color: @electricBlue;
+  padding: 0 @s5;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+
+  @media @toMobile {
+    padding: 0;
+    text-align: left;
+  }
+
+  @media screen and (max-width: unit((unit(@maxWidth) + unit(@pageOffset) * 2) , px) ) {
+    padding: 0 @s8;
+  }
+
+  @media @toMobile {
+    padding: 0;
+  }
+}

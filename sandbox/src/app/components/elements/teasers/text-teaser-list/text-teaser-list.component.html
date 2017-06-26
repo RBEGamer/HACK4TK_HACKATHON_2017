@@ -1,0 +1,10 @@
+<!-- 01.14 Text Teaser Wrapper -->
+<div class="text-teaser-list" [ngClass]="element.backgroundStyleClass ? element.backgroundStyleClass : ''">
+  <h3 *ngIf="element.headlineHtml" [innerHtml]="element.headlineHtml" class="text-teaser-list__headline"></h3>
+
+  <div class="text-teaser-wrapper" [ngClass]="element.gridStyleClass ? element.gridStyleClass :''">
+    <div *ngFor="let textTeaser of element.textTeaserList; let teaserIndex = index" class="text-teaser-list__item">
+      <include-components [elements]="textTeaser"></include-components>
+    </div>
+  </div>
+</div>

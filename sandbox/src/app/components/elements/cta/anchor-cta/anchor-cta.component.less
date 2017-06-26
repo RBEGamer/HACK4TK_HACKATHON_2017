@@ -1,0 +1,66 @@
+/* 15.02 Anchor-CTA */
+@import (reference) "../../../_includes";
+
+:host .anchor-cta {
+
+  margin-bottom: @s2;
+
+  @media @toMobile {
+    margin-bottom: @s4;
+  }
+
+  text-align: center;
+
+  .button {
+    .button-blue();
+    .t5();
+    text-decoration: none;
+    color: @white;
+    padding: @s6 @s5;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    background-color: @electricBlue;
+    display: block;
+    cursor: pointer;
+
+    .box-sizing(border-box);
+
+    &:hover {
+      background-color: @darkBlue;
+
+      & + .arrow {
+        &:before {
+          .transition(margin-top 0.5s);
+          color: @darkBlue;
+          margin-top: @s5 + 5px;
+        }
+      }
+    }
+
+    @media @toMobile {
+      width: 100%;
+    }
+    /deep/ a {
+      text-decoration: none;
+      color: @white;
+      padding: @s6 @s5;
+    }
+  }
+
+  .arrow {
+    .icon-font();
+    .icon-tk-arrow-down();
+    height: 43px;
+    position: relative;
+
+    &:before {
+      color: @electricBlue;
+      font-size: 20px;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: @s6;
+      position: absolute;
+    }
+  }
+}

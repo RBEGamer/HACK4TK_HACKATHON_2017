@@ -1,0 +1,785 @@
+@import (reference) "_variables";
+@import (reference) "_helpers";
+@import (reference) "_grid";
+
+/**
+ *   Fonts
+ */
+@font-face {
+  font-family: "tktype";
+  src: url('@{fontPath}/tktyperegular-eot.eot');
+  src: url('@{fontPath}/tktyperegular-eot.eot?#iefix') format('eot'), url('@{fontPath}/tktyperegular-svg.svg') format('svg'), url('@{fontPath}/tktyperegular-woff.woff') format('woff'), url('@{fontPath}/tktyperegular-ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "tktype";
+  src: ~"url(//:) format('no404')", url('@{fontPath}/tktypebold-svg.svg') format('svg'), url('@{fontPath}/tktypebold-woff.woff') format('woff'), url('@{fontPath}/tktypebold-ttf.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* IE8 fix */
+@font-face {
+  font-family: "tktypebold";
+  src: url('@{fontPath}/tktypebold-eot.eot');
+  src: url('@{fontPath}/tktypebold-eot.eot?#iefix') format('eot');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "tktype";
+  src: url('@{fontPath}/tktypeitalic-eot.eot');
+  src: url('@{fontPath}/tktypeitalic-eot.eot?#iefix') format('eot'), url('@{fontPath}/tktypeitalic-svg.svg') format('svg'), url('@{fontPath}/tktypeitalic-woff.woff') format('woff'), url('@{fontPath}/tktypeitalic-ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "tktypemedium";
+  src: url('@{fontPath}/tktypemedium-eot.eot');
+  src: url('@{fontPath}/tktypemedium-eot.eot?#iefix') format('eot'), url('@{fontPath}/tktypemedium-svg.svg') format('svg'), url('@{fontPath}/tktypemedium-woff.woff') format('woff'), url('@{fontPath}/tktypemedium-ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Iconfont */
+@font-face {
+  font-family: 'icomoon';
+  src: url('@{fontPath}/thyssen-krupp-iconfont-eot.eot?-tcpm6w');
+  src: url('@{fontPath}/thyssen-krupp-iconfont-eot.eot?#iefix-tcpm6w') format('embedded-opentype'), url('@{fontPath}/thyssen-krupp-iconfont-woff.woff?-tcpm6w') format('woff'), url('@{fontPath}/thyssen-krupp-iconfont-ttf.ttf?-tcpm6w') format('truetype'), url('@{fontPath}/thyssen-krupp-iconfont-svg.svg?-tcpm6w#thyssen-krupp-iconfont') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before,
+[class^="icon-"]:after,
+[class*=" icon-"]:after {
+  display: inline-block;
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-font(@position: before) when (@position = before) {
+  &:before {
+    display: inline-block;
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: underline; // Fix for IE - normally it would be 'none' here.
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &:before,
+  &:hover:before {
+    text-decoration: none; // Fix for IE
+  }
+}
+
+.icon-font(@position) when (@position = after) {
+  &:after {
+    display: inline-block;
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-decoration: underline; // Fix for IE - normally it would be 'none' here.
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &:after,
+  &:hover:after {
+    text-decoration: none; // Fix for IE
+  }
+}
+
+.icon-tk-file-powerpoint {
+  &:before {
+    content: "\e644";
+  }
+}
+
+.icon-tk-quiz(@position: before) when (@position = before) {
+  &:before {
+    content: "\e646";
+  }
+}
+
+.icon-tk-quiz(@position: before) when (@position = after) {
+  &:after {
+    content: "\e646";
+  }
+}
+
+.icon-tk-lock(@position: before) when (@position = before) {
+  &:before {
+    content: "\e64b";
+  }
+}
+
+.icon-tk-lock(@position: before) when (@position = after) {
+  &:after {
+    content: "\e64b";
+  }
+}
+
+.icon-tk-flip-card {
+  &:before {
+    content: "\e647";
+  }
+}
+
+.icon-tk-star(@position: before) when (@position = before) {
+  &:before {
+    content: "\e629";
+  }
+}
+
+.icon-tk-star(@position: before) when (@position = after) {
+  &:after {
+    content: "\e629";
+  }
+}
+
+.icon-tk-star-single {
+  &:before {
+    content: "\e655";
+  }
+}
+
+.icon-tk-star-filled2 {
+  &:before {
+    content: "\e903";
+  }
+}
+
+.icon-tk-menu {
+  &:before {
+    content: "\e61f";
+  }
+}
+
+.icon-tk-search(@position: before) when (@position = before) {
+  &:before {
+    content: "\e61c";
+  }
+}
+
+.icon-tk-search(@position: before) when (@position = after) {
+  &:after {
+    content: "\e61c";
+  }
+}
+
+.icon-tk-zoom {
+  &:before {
+    content: "\e637";
+  }
+}
+
+.icon-tk-play(@position: before) when (@position = before) {
+  &:before {
+    content: "\e624";
+  }
+}
+
+.icon-tk-play(@position: before) when (@position = after) {
+  &:after {
+    content: "\e624";
+  }
+}
+
+.icon-tk-play-b(@position: before) when (@position = before) {
+  &:before {
+    content: "\e908";
+  }
+}
+
+.icon-tk-play-b(@position: before) when (@position = after) {
+  &:after {
+    content: "\e908";
+  }
+}
+
+.icon-tk-refresh {
+  &:before {
+    content: "\e64a";
+  }
+}
+
+.icon-tk-close(@position: before) when (@position = before) {
+  &:before {
+    content: "\e606";
+  }
+}
+
+.icon-tk-close(@position: before) when (@position = after) {
+  &:after {
+    content: "\e606";
+  }
+}
+
+.icon-tk-plus {
+  &:before {
+    content: "\e602";
+  }
+}
+
+.icon-tk-minus {
+  &:before {
+    content: "\e603";
+  }
+}
+
+.icon-tk-arrow-down(@position: before) when (@position = before) {
+  &:before {
+    content: "\e613";
+  }
+}
+
+.icon-tk-arrow-down(@position: before) when (@position = after) {
+  &:after {
+    content: "\e613";
+  }
+}
+
+.icon-tk-arrow-left {
+  &:before {
+    content: "\e61d";
+  }
+}
+
+.icon-tk-arrow-right(@position: before) when (@position = before) {
+  &:before {
+    content: "\e61a";
+  }
+}
+
+.icon-tk-arrow-right(@position: before) when (@position = after) {
+  &:after {
+    content: "\e61a";
+  }
+}
+
+.icon-tk-arrow-up(@position: before) when (@position = before) {
+  &:before {
+    content: "\e617";
+  }
+}
+
+.icon-tk-arrow-up(@position: before) when (@position = after) {
+  &:after {
+    content: "\e617";
+  }
+}
+
+.icon-tk-check {
+  &:before {
+    content: "\e648";
+  }
+}
+
+.icon-tk-ring-dot {
+  &:before {
+    content: "\e60e";
+  }
+}
+
+.icon-tk-ring {
+  &:before {
+    content: "\e645";
+  }
+}
+
+.icon-tk-dot {
+  &:before {
+    content: "\e60f";
+  }
+}
+
+.icon-tk-arrow(@position: before) when (@position = before) {
+  &:before {
+    content: "\e638";
+  }
+}
+
+.icon-tk-arrow(@position) when (@position = after) {
+  &:after {
+    content: "\e638";
+  }
+}
+
+.icon-tk-link-website {
+  &:before {
+    content: "\e643";
+  }
+}
+
+.icon-tk-print {
+  &:before {
+    content: "\e610";
+  }
+}
+
+.icon-tk-mail {
+  &:before {
+    content: "\e600";
+  }
+}
+
+.icon-tk-newsletter {
+  &:before {
+    content: "\e62f";
+  }
+}
+
+.icon-tk-share {
+  &:before {
+    content: "\e625";
+  }
+}
+
+.icon-tk-twitter {
+  &:before {
+    content: "\e62a";
+  }
+}
+
+.icon-tk-google-plus {
+  &:before {
+    content: "\e62b";
+  }
+}
+
+.icon-tk-facebook {
+  &:before {
+    content: "\e635";
+  }
+}
+
+.icon-tk-youtube {
+  &:before {
+    content: "\e60a";
+  }
+}
+
+.icon-tk-rss-feed {
+  &:before {
+    content: "\e633";
+  }
+}
+
+.icon-tk-press {
+  &:before {
+    content: "\e607";
+  }
+}
+
+.icon-tk-calendar {
+  &:before {
+    content: "\e608";
+  }
+}
+
+.icon-tk-blog {
+  &:before {
+    content: "\e620";
+  }
+}
+
+.icon-tk-tag {
+  &:before {
+    content: "\e604";
+  }
+}
+
+.icon-tk-pin {
+  &:before {
+    content: "\e60c";
+  }
+}
+
+.icon-tk-language(@position: before) when (@position = before) {
+  &:before {
+    content: "\e609";
+  }
+}
+
+.icon-tk-language(@position: before) when (@position = after) {
+  &:after {
+    content: "\e609";
+  }
+}
+
+.icon-tk-info {
+  &:before {
+    content: "\e642";
+  }
+}
+
+.icon-tk-help {
+  &:before {
+    content: "\e60b";
+  }
+}
+
+.icon-tk-message-info {
+  &:before {
+    content: "\e614";
+  }
+}
+
+.icon-tk-message-error {
+  &:before {
+    content: "\e611";
+  }
+}
+
+.icon-tk-message-important {
+  &:before {
+    content: "\e612";
+  }
+}
+
+.icon-tk-message-correct {
+  &:before {
+    content: "\e615";
+  }
+}
+
+.icon-tk-download {
+  &:before {
+    content: "\e605";
+  }
+}
+
+.icon-tk-video(@position: before) when (@position = before) {
+  &:before {
+    content: "\e64c";
+  }
+}
+
+.icon-tk-video(@position: before) when (@position = after) {
+  &:after {
+    content: "\e64c";
+  }
+}
+
+.icon-tk-file-image {
+  &:before {
+    content: "\e62d";
+  }
+}
+
+.icon-tk-file-text {
+  &:before {
+    content: "\e628";
+  }
+}
+
+.icon-tk-document {
+  &:before {
+    content: "\e626";
+  }
+}
+
+.icon-tk-file-excel {
+  &:before {
+    content: "\e622";
+  }
+}
+
+.icon-tk-file-word {
+  &:before {
+    content: "\e623";
+  }
+}
+
+.icon-tk-file-powerpoint {
+  &:before {
+    content: "\e644";
+  }
+}
+
+.icon-tk-file-pdf {
+  &:before {
+    content: "\e601";
+  }
+}
+
+.icon-tk-file-jpg {
+  &:before {
+    content: "\e627";
+  }
+}
+
+.icon-tk-wikipedia {
+  &:before {
+    content: "\e60d";
+  }
+}
+
+.icon-tk-files {
+  &:before {
+    content: "\e616";
+  }
+}
+
+.icon-tk-telefon {
+  &:before {
+    content: "\e618";
+  }
+}
+
+.icon-tk-status-update {
+  &:before {
+    content: "\e619";
+  }
+}
+
+.icon-tk-settings {
+  &:before {
+    content: "\e61b";
+  }
+}
+
+.icon-tk-radio {
+  &:before {
+    content: "\e61e";
+  }
+}
+
+.icon-tk-profil {
+  &:before {
+    content: "\e621";
+  }
+}
+
+.icon-tk-mobile {
+  &:before {
+    content: "\e62c";
+  }
+}
+
+.icon-tk-ideation {
+  &:before {
+    content: "\e62e";
+  }
+}
+
+.icon-tk-id-card {
+  &:before {
+    content: "\e630";
+  }
+}
+
+.icon-tk-home {
+  &:before {
+    content: "\e631";
+  }
+}
+
+.icon-tk-forum {
+  &:before {
+    content: "\e632";
+  }
+}
+
+.icon-tk-down {
+  &:before {
+    content: "\e634";
+  }
+}
+
+.icon-tk-document2 {
+  &:before {
+    content: "\e636";
+  }
+}
+
+.icon-tk-compass {
+  &:before {
+    content: "\e639";
+  }
+}
+
+.icon-tk-community {
+  &:before {
+    content: "\e63a";
+  }
+}
+
+.icon-tk-bookmark {
+  &:before {
+    content: "\e63b";
+  }
+}
+
+.icon-tk-attention {
+  &:before {
+    content: "\e63c";
+  }
+}
+
+.icon-tk-activities {
+  &:before {
+    content: "\e63d";
+  }
+}
+
+.icon-tk-abstractservices {
+  &:before {
+    content: "\e63e";
+  }
+}
+
+.icon-tk-xing {
+  &:before {
+    content: "\e63f";
+  }
+}
+
+.icon-tk-linkedin {
+  &:before {
+    content: "\e640";
+  }
+}
+
+.icon-tk-rising {
+  &:before {
+    content: "\e641";
+  }
+}
+
+.icon-tk-falling {
+  &:before {
+    content: "\e649";
+  }
+}
+
+.icon-tk-stagnating {
+  &:before {
+    content: "\e64d";
+  }
+}
+
+.icon-tk-edit {
+  &:before {
+    content: "\e64e";
+  }
+}
+
+.icon-tk-delete {
+  &:before {
+    content: "\e64f";
+  }
+}
+
+.icon-tk-check-border-circle(@position: before) when (@position = before) {
+  &:before {
+    content: "\e650";
+  }
+}
+
+.icon-tk-check-border-circle(@position: before) when (@position = after) {
+  &:after {
+    content: "\e650";
+  }
+}
+
+.icon-tk-search-single(@position: before) when (@position = before) {
+  &:before {
+    content: "\e651";
+  }
+}
+
+.icon-tk-search-single(@position: before) when (@position = after) {
+  &:after {
+    content: "\e651";
+  }
+}
+
+.icon-tk-fontsize(@position: before) when (@position = before) {
+  &:before {
+    content: "\e800";
+  }
+}
+
+.icon-tk-fontsize(@position: before) when (@position = after) {
+  &:after {
+    content: "\e800";
+  }
+}
+
+.icon-tk-contrast(@position: before) when (@position = before) {
+  &:before {
+    content: "\e801";
+  }
+}
+
+.icon-tk-contrast(@position: before) when (@position = after) {
+  &:after {
+    content: "\e801";
+  }
+}
+
+.icon-tk-gesture {
+  &:before {
+    content: "\e802";
+  }
+}
+
+.icon-tk-arrow-up2 {
+  &:before {
+    content: "\e901";
+  }
+}
+
+.icon-tk-arrow-down2 {
+  &:before {
+    content: "\e900";
+  }
+}
+
+.icon-tk-calendar-circle {
+  &:before {
+    content: "\e905";
+  }
+}
+
+.icon-tk-pdf-file-circle {
+  &:before {
+    content: "\e906";
+  }
+}
+
+.icon-tk-close-single {
+  &:after {
+    content: "\e659";
+  }
+}

@@ -1,0 +1,20 @@
+<!-- 07.03 Tab Container -->
+<div class="tab-container r-tabs">
+  <p *ngIf="element.headlineHtml" class="headline" [innerHTML]="element.headlineHtml"></p>
+
+  <ul class="tabs r-tabs-nav">
+    <li *ngFor="let tabItem of element.tabElementList; let tabIndex = index"
+        [class.r-tabs-state-active]="currentTab == tabIndex" [class.r-tabs-state-default]="currentTab != tabIndex"
+        class="r-tabs-tab">
+      <a class="r-tabs-anchor" (click)="currentTab = tabIndex" [innerHTML]="tabItem.titleHtml"></a>
+    </li>
+  </ul>
+
+  <div *ngFor="let tabItem of element.tabElementList; let tabIndex = index"
+       [class.r-tabs-state-active]="currentTab == tabIndex" [class.r-tabs-state-default]="currentTab != tabIndex"
+       class="pane r-tabs-panel">
+    <div class="paragraph">
+      <include-components [elements]="tabItem.contentElementList"></include-components>
+    </div>
+  </div>
+</div>
