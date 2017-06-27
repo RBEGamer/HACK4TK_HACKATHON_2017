@@ -10,11 +10,12 @@ if (read != '[]'):
 js = '[{0}]'.format(read.text)
 data = json.loads(js)
 print(data)
-tts = gTTS(text='Temperature too high in Vertikal Muehle please contact '+data[0]["contact_name"]+' imediatly', lang='en', slow=False)
-tts.save("temp.mp3")
-os.system("vlc temp.mp3")
+while(True):
+    tts = gTTS(text='Temperature too high in Vertikal Muehle please contact '+data[0]["contact_name"]+' imediatly', lang='en', slow=False)
+    tts.save("temp.mp3")
+    os.system("vlc temp.mp3")
 
-init("aimoegrsmp6xhz4mxgx5c16p7qkkcj")
-Client("ucndiysyovk86rgy1n16dv9pryzm54").send_message('Please contact '+data[0]["contact_name"]+' under 00492018440', title="Warning Message")
+    init("aimoegrsmp6xhz4mxgx5c16p7qkkcj")
+    Client("ucndiysyovk86rgy1n16dv9pryzm54").send_message('Please contact '+data[0]["contact_name"]+' under 00492018440', title="Warning Message")
 
 
