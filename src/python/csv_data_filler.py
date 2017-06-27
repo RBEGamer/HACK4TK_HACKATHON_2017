@@ -13,11 +13,11 @@ while 1:
                 continue
             read = requests.get("http://109.230.230.209/hack4tk/insert_data.php?token=tk4hack&comp_id=2&mach_id=1&value="+ row[2] +"&suid=tempSensor&type=temp")
             print(read.text)
-            print(row[0])
+            #print(row[0])
                 #read.text
-            time.sleep(10)
+            time.sleep(100)
             read = requests.get("http://109.230.230.209/hack4tk/insert_data.php?token=tk4hack&comp_id=2&mach_id=1&value="+ row[3] +"&suid=humSensor&type=hum")
             print(read.text)
                 #print(row)
-            read.text
+            #read.text
             time.sleep(2000)
