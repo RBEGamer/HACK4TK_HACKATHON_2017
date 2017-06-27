@@ -16,5 +16,5 @@ while(1):
     tts.save("temp.mp3")
     os.system("vlc temp.mp3")
 
-init("<token>")
-Client("<user-key>").send_message('Please contact '+data[0]["contact_name"]+' under '+data[12]["3"]+' ', title="Warning Message")
+init("aimoegrsmp6xhz4mxgx5c16p7qkkcj")
+Client("ucndiysyovk86rgy1n16dv9pryzm54").send_message('Please contact '+data[0]["contact_name"]+' under '+data[12]["3"]+' ', title="Warning Message")
