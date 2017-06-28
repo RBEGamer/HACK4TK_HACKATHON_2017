@@ -1,9 +1,0 @@
-<div class="products container">
-  <p class="subheadline" *ngIf="element.subheadline">{{element.subheadline}}</p>
-  <p class="headline" *ngIf="element.headline">{{element.headline}}</p>
-  <ul>
-    <li *ngFor="let productElement of element.accontentElementList">
-      <include-components [elements]="productElement"></include-components>
-    </li>
-  </ul>
-</div>

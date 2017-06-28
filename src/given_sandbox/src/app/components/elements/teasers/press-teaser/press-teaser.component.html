@@ -1,7 +1,0 @@
-<!-- 01.06 Press Teaser -->
-<div class="pressteaser mediacentre-list">
-  <p class="headline" *ngIf="element.headlineHtml" [innerHTML]="element.headlineHtml"></p>
-
-  <include-components [elements]="pressTeaserList"></include-components>
-  <include-components *ucpIsset="element.link" [elements]="element.link"></include-components>
-</div>

@@ -1,8 +1,0 @@
-<div class="selector">
-  <div class="language-select">
-    <a class="label" (click)="toggleVisibility()">{{currentPath.substr(-2).toUpperCase()}}</a>
-    <ul *ngIf="availableLanguages" [@visibleState]="state">
-      <li *ngFor="let language of availableLanguages"><span (click)="navigateToLanguage(language)">{{language.abbreviation}}</span></li>
-    </ul>
-  </div>
-</div>
