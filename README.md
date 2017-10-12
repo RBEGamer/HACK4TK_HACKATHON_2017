@@ -1,6 +1,6 @@
-# hack4tk_2017_champs
-
-## 3rd place
+# hack4tk_2017
+* Temaname: aixtremethruth
+* 3rd place
 
 # IDEA
 This is the repo for the hack4tk 2017 hackathon from the team Aixtreme. 
